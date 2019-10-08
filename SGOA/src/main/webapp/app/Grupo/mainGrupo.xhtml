@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>
+            Cadastro Grupo
+        </title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:define name="body">
+
+                <p:panel id="mainGrupo"
+                         style="border: none 0px;">
+
+                    <p:panel style="border: none 0px;"
+                             visible="#{grupoController.ativarList}">
+                        <b:tabView>
+                            <b:tab title="Grupos Pessoas">
+                                <ui:include src="listGrupoPessoa.xhtml"/>
+                            </b:tab>
+                            <b:tab title="Grupos de Produtos">
+                                <ui:include src="listGrupoProduto.xhtml"/>
+                            </b:tab>
+                        </b:tabView>
+
+                    </p:panel>
+
+                    <p:panel visible="#{grupoController.ativarView}"
+                             style="border: none 0px;">
+
+                        <ui:include src="viewGrupo.xhtml"/>
+
+                    </p:panel>
+                    <p:panel visible="#{grupoController.ativarCreate}"
+                             style="border: none 0px;">
+                        <ui:include src="createGrupo.xhtml"/>
+
+                    </p:panel>
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

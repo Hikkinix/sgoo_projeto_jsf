@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="body">
+
+            <p:panel id="mainMarca"
+                     style="border: none 0px;">
+
+                <p:panel style="border: none 0px;"
+                         visible="#{marcaController.ativarList}">
+                    <ui:include src="listMarca.xhtml"/>
+
+                </p:panel>
+
+                <p:panel visible="#{marcaController.ativarView}"
+                         style="border: none 0px;">
+
+                    <ui:include src="viewMarca.xhtml"/>
+
+                </p:panel>
+                <p:panel visible="#{marcaController.ativarCreate}"
+                         style="border: none 0px;">
+                    <ui:include src="createMarca.xhtml"/>
+
+                </p:panel>
+            </p:panel>
+        </ui:define>
+
+        <ui:include src="listMarca.xhtml"/>
+        <ui:include src="viewMarca.xhtml"/>
+        <ui:include src="createMarca.xhtml"/>
+    </ui:composition>
+</h:body>
+</html>

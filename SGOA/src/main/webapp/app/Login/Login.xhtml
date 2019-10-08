@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="login.css" rel="stylesheet"/>
+    <h:outputScript src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"/>
+    <h:outputScript src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+
+</h:head>
+    <f:view>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+                </div>
+
+                <!-- Login Form -->
+                <h:form>
+                    <input type="text" id="login" class="fadeIn second" name="login" />
+                    <input type="text" id="password" class="fadeIn third" name="login" />
+                    <input type="submit" class="fadeIn fourth" value="Log In"/>
+                </h:form>
+
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                </div>
+
+            </div>
+        </div>
+    </f:view>
+</html>

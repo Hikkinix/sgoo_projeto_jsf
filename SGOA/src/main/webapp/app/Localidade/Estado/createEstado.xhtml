@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <f:view>
+        <h:form>    
+
+            <p:toolbar>
+                <f:facet name="left">
+
+                    <p:outputLabel value="Estado" />
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
+
+                    <p:commandButton value="Salvar"
+                                     icon="#{icons.salvar}"
+                                     update="mainEstado"
+                                     actionListener="#{estadoController.salvar()}"
+                    />
+                    <p:commandButton value="Voltar"
+                                     icon="#{icons.voltar}"
+                                     immediate="true"
+                                     update="mainEstado"
+                                     actionListener="#{estadoController.layoutList()}"/>
+
+                </f:facet>
+            </p:toolbar>
+
+            <b:panel title="Cadastro Estado" collapsible="false">
+                <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+                    <h:outputLabel value="Nome:" style="font-weight:bold"/>
+
+                    <b:inputText value="#{estadoController.selected.nomeEstado}"
+                                 required="true"
+                                 requiredMessage="O nome é obrigatório!"
+                                 size="50"
+                                 placeholder="Nome"
+                                 style="text-transform: capitalize;"/>
+
+                    <h:outputLabel value="UF:" style="font-weight:bold"/>
+                    <b:inputText value="#{estadoController.selected.uf}"
+                                 required="true"
+                                 placeholder="UF"
+                                 style="text-transform: uppercase;"
+                                 requiredMessage="A sigla é obrigatório!"
+                                 size="10"
+                                 maxlength="2"
+                                 id="sigla"/> 
+
+                    <p:separator />
+                </h:panelGrid>
+            </b:panel>
+        </h:form>
+
+    </f:view>
+</html>

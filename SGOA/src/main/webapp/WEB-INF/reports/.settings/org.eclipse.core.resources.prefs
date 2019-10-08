@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//FormaPagamento/relFomaPagamentos.jrxml=UTF-8
+encoding//Localidade/Cidade/relCidade.jrxml=UTF-8
+encoding//Localidade/Estado/relEstado.jrxml=UTF-8
+encoding//Pessoa/Cliente/relCliente.jrxml=UTF-8
+encoding//Pessoa/Fornecedor/relFornecedor.jrxml=UTF-8
+encoding//Pessoa/Funcionario/relFuncionario.jrxml=UTF-8
+encoding//Produto/EstoqueAtual/relEstoque.jrxml=UTF-8
+encoding//Produto/ProdutoPorFornecedor/relProdFornecedor.jrxml=UTF-8
+encoding//Produto/ProdutoPorGrupoeMarca/relProdGrupoMarca.jrxml=UTF-8
+encoding//Usuario/relUsuario.jrxml=UTF-8
+encoding/template.jrxml=UTF-8
+encoding/teste.jrxml=UTF-8

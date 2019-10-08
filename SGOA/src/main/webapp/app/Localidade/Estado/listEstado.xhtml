@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:form id="listasEstado">    
+            <b:growl id="messages" showDetail="true" />
+            <p:toolbar>
+                <f:facet name="left">
+                    
+                    <p:commandButton value="Voltar"
+                                     action="/index"
+                                     icon="#{icons.voltar}"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Novo"
+                                     icon="#{icons.novo}"
+                                     actionListener="#{estadoController.novo()}"
+                                     ajax="false"/>
+<!--                    <p:commandButton update="Detail" oncomplete="PF('Dialog').show()" icon="ui-icon-search" title="View"/>-->
+                    <p:commandButton update="mainEstado"
+                                     icon="ui-icon-search"
+                                     rendered="false"
+                                     actionListener="#{estadoController.layoutView()}"
+                                     title="View"/>
+
+
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
+
+                    <p:outputLabel value="Estado" />
+                </f:facet>
+            </p:toolbar>
+            <br/>
+                <b:dataTable id="dataTableEstado"
+                             value="#{estadoController.listaTodos()}"
+                             var="obj">
+                    <b:dataTableColumn label="Codigo" value="#{obj.idEstado}"/>
+                    <b:dataTableColumn label="Nome" value="#{obj.nomeEstado}"/>
+                    <b:dataTableColumn label="UF" value="#{obj.uf}" style="text-transform: uppercase;"/>
+                    <b:dataTableColumn label="Operações" style="align-items: center;">
+                        <p:commandButton icon="#{icons.deletar}"
+                                         update="mainEstado"
+                                         actionListener="#{estadoController.excluir(obj)}"/>
+
+                        <p:commandButton icon="#{icons.editar}"
+                                         immediate="true"
+                                         update="mainEstado"
+                                         actionListener="#{estadoController.editar(obj)}"/>
+
+                    </b:dataTableColumn>
+                </b:dataTable>
+        </h:form>
+
+
+    </f:view>
+</html>

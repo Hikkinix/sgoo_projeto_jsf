@@ -1,0 +1,9 @@
+{
+    "short_name": "SGOA",
+    "name": "Sistema de gerenciamento otica e acessorios",
+    "isLoggedIn": false,
+    "theme_color": "#798082",
+    "background_color": "#ffffff",
+    "start_url": "/login.xhtml",
+    "display": "standalone"
+}

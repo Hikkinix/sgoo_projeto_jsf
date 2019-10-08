@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <f:view>
+        <h:form>    
+
+            <p:toolbar>
+                <f:facet name="left">
+                    <p:outputLabel value="Contas Pagar" />
+
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
+
+                    <p:commandButton value="Salvar"
+                                     icon="#{icons.salvar}"
+                                     update="mainContasPagar"
+                                     actionListener="#{contasPagarController.salvar()}"
+                    />
+                    <p:commandButton value="Voltar"
+                                     icon="#{icons.voltar}"
+                                     immediate="true"
+                                     update="mainContasPagar"
+                                     actionListener="#{contasPagarController.layoutList()}"/>
+
+                </f:facet>
+            </p:toolbar>
+
+            <b:panel title="Cadastro Contas Pagar" collapsible="false">
+                <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+                    <h:outputLabel value="Forma Pagamento:" style="font-weight:bold"/>
+                    <p:autoComplete value="#{contasPagarController.selected.formaPaga}"
+                                    completeMethod="#{planoPagamentoController.listaFiltrando}"
+                                    var="obj"
+                                    size="50"
+                                    itemLabel="#{obj.nomeFormPag}"
+                                    itemValue="#{obj}"
+                                    converter="#{planoPagamentoController.converter}"
+                                    dropdown="true"
+                    >
+                        <p:ajax event="itemSelect"/>
+                    </p:autoComplete>
+
+                    <h:outputLabel value="Fornecedor:" style="font-weight:bold"/>
+                    <p:autoComplete value="#{contasPagarController.selected.fornecedorRecebedor}"
+                                    completeMethod="#{pessoaController.listaFiltrando}"
+                                    var="obj"
+                                    size="50"
+                                    itemLabel="#{obj.nomePessoa}"
+                                    itemValue="#{obj}"
+                                    converter="#{pessoaController.converter}"
+                                    dropdown="true"
+                    >
+                        <p:ajax event="itemSelect"/>
+                    </p:autoComplete>
+
+                    <h:outputLabel value="Valor a pagar:" style="font-weight:bold"/>
+                    <b:inputText id="valorAPagar"
+                                 value="#{contasPagarController.selected.valorPagar}"
+                                 required="true"
+                                 onkeypress="return somenteNumeros(event)"
+                                 onkeydown="return mascaraMonetaria(this)"
+                                 converter="#{contasPagarController.moneyconverter}"
+                                 requiredMessage="O valor a pagar é obrigatório!"
+                                 size="30"
+                                 placeholder="valor a pagar">
+                    </b:inputText>
+
+                    <h:outputLabel value="Valor Restante a pagar" style="font-weight:bold"/>
+                    <b:inputText id="valorTotalPagar"
+                                 value="#{contasPagarController.selected.valorTotalPagar}"
+                                 required="true"
+                                 onkeypress="return somenteNumeros(event)"
+                                 onkeydown="return mascaraMonetaria(this)"
+                                 converter="#{contasPagarController.moneyconverter}"
+                                 requiredMessage="O Numero de parcelas é obrigatório!"
+                                 size="30"
+                                 disabled="true"
+                                 placeholder="Restante">
+                    </b:inputText>
+
+                    <h:outputLabel value="Valor total Pago" style="font-weight:bold"/>
+                    <b:inputText id="valorTotalPago"
+                                 value="#{contasPagarController.selected.valorTotalpago}"
+                                 required="true"
+                                 onkeydown="return mascaraMonetaria(this)"
+                                 converter="#{contasPagarController.moneyconverter}"
+                                 onkeypress="return somenteNumeros(event)"
+                                 requiredMessage="O Numero de parcelas é obrigatório!"
+                                 size="30"
+                                 disabled="true"
+                                 placeholder="Total Pago">
+                    </b:inputText>
+
+
+                    <p:separator />
+
+                </h:panelGrid>
+            </b:panel>
+        </h:form>
+
+    </f:view>
+</html>

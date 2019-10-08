@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <p:panel title="Pessoa Endereço" collapsible="false">
+        <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+            <h:outputLabel value="CEP:" style="font-weight:bold"/>
+
+            <b:inputText id="cep"
+                         value="#{enderecoController.endereco.cep}"
+                         required="true"
+                         requiredMessage="O cep é obrigatório!"
+                         size="10"
+                         placeholder="Cep">
+                <f:convertNumber integerOnly="true"/>
+            </b:inputText>
+
+            <h:outputLabel value="Rua:" style="font-weight:bold"/>
+            <b:inputText value="#{enderecoController.endereco.rua}"
+                         required="true"
+                         placeholder="Rua"
+                         requiredMessage="A Rua é obrigatório!"
+                         size="60"
+                         id="rua"/>
+
+            <h:outputLabel value="Numero:" style="font-weight:bold"/>
+            <b:inputText value="#{enderecoController.endereco.numero}"
+                         required="true"
+                         placeholder="Numero"
+                         requiredMessage="A Numero é obrigatório!"
+                         size="10"
+                         onkeypress="return somenteNumeros(event)"
+                         id="numero">
+                <f:convertNumber integerOnly="true"/>
+            </b:inputText>
+
+            <h:outputLabel value="Bairro:" style="font-weight:bold"/>
+            <b:inputText value="#{enderecoController.endereco.bairro}"
+                         required="true"
+                         placeholder="Bairro"
+                         requiredMessage="A Bairro é obrigatório!"
+                         size="50"
+                         id="bairro"/>
+
+            <h:outputLabel value="Cidade:" style="font-weight:bold"/>
+            <p:autoComplete value="#{enderecoController.endereco.cidade}"
+                            completeMethod="#{cidadeController.listaFiltrando}"
+                            var="obj"
+                            size="50"
+                            dropdown="true"
+                            placeholder="Cidade"
+                            itemLabel="#{obj.cidadeEstado} "
+                            itemValue="#{obj}"
+                            converter="#{cidadeController.converter}"
+            />
+            <h:outputLabel value="Ativo:" style="font-weight:bold"/>
+            <p:selectBooleanButton id="endeAtivo" value="#{enderecoController.endereco.padrao}"
+                                   onLabel="Sim" offLabel="Não"
+                                   onIcon="pi pi-check"
+                                   offIcon="pi pi-times"
+                                   style="width:20%px">
+            </p:selectBooleanButton>
+            <hr/>
+        </h:panelGrid>
+
+        <p:commandButton value="Adicionar"
+                         icon="#{icons.adicionar}"
+                         update="mainEndereco"
+                         actionListener="#{enderecoController.addEndereco(pessoaController.selected)}"
+        />
+        <p:separator />
+        <br/>
+            <ui:include src="listEnderecoPessoa.xhtml"/>
+    </p:panel>
+
+</f:view>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <h:form id="createCompra">
+        <b:growl id="messages" showDetail="true"/>
+
+        <p:toolbar>
+            <f:facet name="left">
+                <p:outputLabel value="Compra"/>
+
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+            </f:facet>
+        </p:toolbar>
+    </h:form>
+    <b:tabView id="tabCompra">
+        <b:tab title="Compra" id="tabForn">
+            <h:form id="mainFornecedor">
+                <ui:include src="/app/Compra/Fornecedor/createFornecedor.xhtml"/>
+
+            </h:form>
+        </b:tab>
+        <b:tab title="ProdutoItem" id="tabItem">
+            <h:form id="mainProdutoItem">
+                <ui:include src="/app/Compra/item/createProdutoItem.xhtml"/>
+            </h:form>
+        </b:tab>
+        <b:tab title="Fechamento" id="tabEnd">
+            <h:form id="mainFechamento">
+                <ui:include src="/app/Compra/Fechamento/createFechamento.xhtml"/>
+                <p:commandButton value="Salvar"
+                                 icon="#{icons.salvar}"
+                                 ajax="false"
+                                 actionListener="#{compraController.salvar()}"
+                />
+                <p:commandButton value="Voltar"
+                                 icon="#{icons.voltar}"
+                                 immediate="true"
+                                 ajax="false"
+                                 actionListener="#{compraController.layoutList()}"/>
+
+
+            </h:form>
+        </b:tab>
+
+    </b:tabView>
+
+
+</f:view>
+</html>

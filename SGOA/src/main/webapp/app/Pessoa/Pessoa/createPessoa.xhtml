@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <h:form id="createPessoa">
+
+        <p:toolbar>
+            <f:facet name="left">
+                <p:outputLabel value="Pessoa"/>
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+            </f:facet>
+
+        </p:toolbar>
+    </h:form>
+    <b:tabView id="tabPessoa">
+        <b:tab title="Pessoa">
+            <h:form>
+
+                <b:panel title="Cadastro Pessoa" collapsible="false">
+                    <b:panelGrid columns="12">
+                        <b:selectBooleanCheckbox id="checkCliente" label="Cliente" display="inline"
+                                                 value="#{pessoaController.selected.atribuicaoPessoa.cliente}"
+                        />
+
+                        <b:selectBooleanCheckbox id="checkColaborador" label="Colaborador" display="inline"
+                                                 value="#{pessoaController.selected.atribuicaoPessoa.colaborador}"
+                        />
+
+                        <b:selectBooleanCheckbox id="checkFornecedor" label="Fornecedor" display="inline"
+                                                 value="#{pessoaController.selected.atribuicaoPessoa.fornecedor}"
+                        />
+
+                        <b:selectBooleanCheckbox id="checkTrapotador" label="Transporte" display="inline"
+                                                 value="#{pessoaController.selected.atribuicaoPessoa.transportadora}"
+                        />
+                    </b:panelGrid>
+                    <h:panelGrid id="grid" columns="1" cellpadding="5">
+                        <h:outputLabel value="CPF/CNPJ:" style="font-weight:bold"/>
+                        <b:inputText value="#{pessoaController.selected.cpfcnpj}"
+                                     required="true"
+                                     placeholder="CPF/CNPJ"
+                                     requiredMessage="A CPF/CNPJ é obrigatório!"
+                                     size="20"
+                                     id="cpfCnpj"
+                                     onkeypress='mascaraMutuario(this,cpfCnpj)'
+                                     onblur='clearTimeout()'/>
+
+                        <h:outputLabel value="Nome:" style="font-weight:bold"/>
+                        <b:inputText value="#{pessoaController.selected.nomePessoa}"
+                                     required="true"
+                                     placeholder="Nome"
+                                     style="text-transform: capitalize;"
+                                     requiredMessage="O nome é obrigatório!"
+                                     size="50"
+                                     id="nome"/>
+
+                        <h:outputLabel value="E-mail:" style="font-weight:bold"/>
+                        <b:inputText value="#{pessoaController.selected.emaill}"
+                                     placeholder="EMail"
+                                     size="50"
+                                     type="mail"
+                                     id="email"/>
+
+                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                            <p:outputLabel for="genero" value="Genero:"/>
+                            <p:selectOneRadio id="genero" value="#{pessoaController.selected.genero}">
+                                <f:selectItems value="#{pessoaController.selected.genero.listaGenero}"
+                                               var="objGen"
+                                               itemLabel="#{objGen.descricao}"
+                                               itemValue="#{objGen}"/>
+
+                            </p:selectOneRadio>
+                        </h:panelGrid>
+
+                        <h:outputLabel value="Grupo:" style="font-weight:bold"/>
+                        <p:autoComplete value="#{pessoaController.selected.grupoPessoa}"
+                                        completeMethod="#{grupoController.listaFiltrandoPessoa}"
+                                        var="obj"
+                                        size="50"
+                                        itemLabel="#{obj.nomeGrupo}"
+                                        itemValue="#{obj}"
+                                        converter="#{grupoController.converter}"
+                                        dropdown="true"
+                                        placeholder="Grupo"
+                        />
+                    </h:panelGrid>
+                    <p:separator />
+                    <br/>
+                    <p:commandButton value="Salvar"
+                                     icon="#{icons.salvar}"
+                                     update="mainPessoa"
+                                     actionListener="#{pessoaController.salvar()}"
+                    />
+                    <p:commandButton value="Voltar"
+                                     icon="#{icons.voltar}"
+                                     immediate="true"
+                                     update="mainPessoa"
+                                     actionListener="#{pessoaController.layoutList()}"/>
+
+                </b:panel>
+            </h:form>
+        </b:tab>
+        <b:tab title="Telefone" id="tabTel">
+            <h:form id="mainTelefone">
+                <ui:include src="/app/Pessoa/Telefone/createTelefone.xhtml"/>
+            </h:form>
+        </b:tab>
+        <b:tab title="Endereço" id="tabEnd">
+            <h:form id="mainEndereco">
+                <ui:include src="/app/Pessoa/Endereco/createEndereco.xhtml"/>
+            </h:form>
+        </b:tab>
+
+    </b:tabView>
+
+
+</f:view>
+</html>

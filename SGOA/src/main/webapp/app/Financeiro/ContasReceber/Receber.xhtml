@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+        <p:toolbar id="toolbarBottons">
+            <f:facet name="left">
+
+                <p:commandButton value="Voltar"
+                                 action="/index"
+                                 icon="#{icons.voltar}"
+                                 ajax="false"/>
+
+                <p:commandButton value="Novo" icon="#{icons.novo}"
+                                 actionListener="#{contasReceberController.novoContaReceber}"
+                                 ajax="false"/>
+
+                <p:commandButton update="mainContasReceber"
+                                 icon="ui-icon-search"
+                                 rendered="false"
+                                 actionListener="#{contasReceberController.layoutView()}"
+                                 title="View"/>
+
+
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+
+                <p:outputLabel value="ContasReceber"/>
+            </f:facet>
+        </p:toolbar>
+        <br/>
+        <b:dataTable id="dataTableContasReceber"
+                     value="#{contasReceberController.listaProcessamento()}"
+                     var="obj"
+                     widgetVar="estdtable"
+                     lang="br"
+                     info="true"
+                     fixedHeader="true"
+                     mark-search-results="true"
+                     page-length-menu="5,10,20"
+                     save-state="true"
+                     searching="true"
+                     select="true"
+                     selectionMode="multiple"
+                     update="toolbarBottons"
+                     customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+
+            <b:dataTableColumn label="Codigo" value="#{obj.idReceberPagar}"/>
+            <b:dataTableColumn label="Pessoa" value="#{obj.clientePagador.nomePessoa}"/>
+            <b:dataTableColumn label="Vencimento" value="#{obj.diaVencimento}"/>
+            <b:dataTableColumn label="Parcela" value="#{obj.numParcela}"/>
+            <b:dataTableColumn label="Valor Total Conta">
+                <p:outputLabel value="#{obj.valorTotalPagar}"
+                               converter="#{compraController.moneyconverter}"/>
+            </b:dataTableColumn>
+            <b:dataTableColumn label="Valor A pagar">
+                <p:outputLabel value="#{obj.valorPagar}"
+                               converter="#{compraController.moneyconverter}"/>
+            </b:dataTableColumn>
+            <b:dataTableColumn label="Operações" style="align-items: center;">
+                <p:commandButton icon="#{icons.deletar}"
+                                 update="mainContasReceber"
+                                 actionListener="#{contasReceberController.cancelar(obj)}"/>
+
+                <p:commandButton icon="#{icons.editar}"
+                                 immediate="true"
+                                 update="mainContasReceber"
+                                 actionListener="#{contasReceberController.editar(obj)}"/>
+
+                <p:commandButton value="Pagamento" icon="#{icons.pagar}"
+                                 actionListener="#{contasReceberController.recebimento(obj)}"
+                                 ajax="false"
+                                 id="realizarPagamento"/>
+
+            </b:dataTableColumn>
+        </b:dataTable>
+
+</f:view>
+</html>

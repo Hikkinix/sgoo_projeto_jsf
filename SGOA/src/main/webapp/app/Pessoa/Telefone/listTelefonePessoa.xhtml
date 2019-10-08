@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <p:growl id="messages" showDetail="true" />
+    <b:dataTable id="dataTableTelefone"
+                 value="#{pessoaController.selected.telefones}"
+                 var="obj"
+                 widgetVar="estdtable"
+                 lang="br"
+                 info="true"
+                 fixedHeader="true"
+                 mark-search-results="true"
+                 page-length-menu="5,10,20"
+                 save-state="true"
+                 searching="true"
+                 select="#{telefoneController.telefone}"
+                 selectionMode="single"
+                 customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+        <b:dataTableColumn label="Numero" value="#{obj.numero}"/>
+        <b:dataTableColumn label="Excluir" style="align-items: center;">
+            <p:commandButton icon="#{icons.deletar}"
+                             update="tabTel:mainTelefone"
+                             immediate="true"
+                             id="removeTel"
+                             actionListener="#{telefoneController.removeTelefone(obj.pessoa)}"/>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Editar" style="align-items: center;">
+            <p:commandButton icon="#{icons.editar}"
+                             id="editTel"
+                             immediate="true"
+                             update="tabTel:mainTelefone"
+                             actionListener="#{telefoneController.editTelefone(obj)}"/>
+
+        </b:dataTableColumn>
+    </b:dataTable>
+</f:view>
+</html>

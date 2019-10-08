@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:form>
+            <b:growl id="messages" showDetail="true" />
+
+            <p:toolbar>
+                <f:facet name="left">
+                    
+                    <p:commandButton value="Voltar"
+                                     action="/index"
+                                     icon="#{icons.voltar}"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Novo" icon="#{icons.novo}"
+                                     actionListener="#{marcaController.novo()}"
+                                     ajax="false"/>
+
+                    <p:commandButton update="mainMarca"
+                                     icon="ui-icon-search"
+                                     rendered="false"
+                                     actionListener="#{marcaController.layoutView()}"
+                                     title="View"/>
+
+
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
+
+                    <p:outputLabel value="Marca" />
+                </f:facet>
+            </p:toolbar>
+            <br/>
+                <b:dataTable id="dataTableMarca"
+                             value="#{marcaController.listaTodos()}"
+                             var="obj"
+                             widgetVar="estdtable"
+                             lang="br"
+                             info="true"
+                             fixedHeader="true"
+                             mark-search-results="true"
+                             page-length-menu="5,10,20"
+                             save-state="true"
+                             searching="true"
+                             select="#{marcaController.selected}"
+                             selectionMode="single"
+                             customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+                    <b:dataTableColumn label="Codigo" value="#{obj.idMarca}"/>
+                    <b:dataTableColumn label="Nome" value="#{obj.nomeMarca}"/>
+                    <b:dataTableColumn label="Operações" style="align-items: center;">
+                        <p:commandButton icon="#{icons.deletar}"
+                                         update="mainMarca"
+                                         actionListener="#{marcaController.excluir(obj)}"/>
+                        <p:commandButton icon="#{icons.editar}"
+                                         immediate="true"
+                                         update="mainMarca"
+                                         actionListener="#{marcaController.editar(obj)}"/>
+
+                    </b:dataTableColumn>
+                </b:dataTable>
+
+
+        </h:form>
+
+
+    </f:view>
+</html>

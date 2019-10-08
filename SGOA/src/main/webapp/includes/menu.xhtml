@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <style type="text/css">
+
+        @-moz-document url-prefix() {
+            li span.label-danger {
+                margin-top: -20px;
+            }
+        }
+    </style>
+
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li>
+            <p:link outcome="/index.xhtml">
+                <i class="fa fa-home"></i>
+                <span>Home</span>
+            </p:link>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <span>Cadastros</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+
+                <li>
+                    <p:link outcome="/app/Localidade/Estado/mainEstado.xhtml">
+                        <i class="fa fa-map" aria-hidden="true"></i>
+                        <span>Estado</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Localidade/Cidade/mainCidade.xhtml">
+                        <i class="fa fa-map-pin" aria-hidden="true"></i>
+                        <span>Cidade</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Grupo/mainGrupo.xhtml">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Grupo</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Pessoa/Pessoa/mainPessoa.xhtml">
+                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                        <span>Pessoa</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Produto/Unidade/mainUnidade.xhtml">
+                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                        <span>Unidade</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Produto/Marca/mainMarca.xhtml">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                        <span>Marca</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Produto/Produto/mainProduto.xhtml">
+                        <i class="fa fa-cube" aria-hidden="true"></i>
+                        <span>Produto</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/app/Financeiro/planoPagamento/mainPlanoPagamento.xhtml">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <span>Plano Pagamento</span>
+                    </p:link>
+                </li>
+
+                <li>
+                    <p:link outcome="/app/Financeiro/Banco/mainBanco.xhtml">
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                        <span>Banco</span>
+                    </p:link>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-suitcase" aria-hidden="true"></i>
+                <span>Movimentos</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+
+                <li>
+                    <p:link outcome="/app/Compra/mainCompra.xhtml">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        <span>Compra</span>
+                    </p:link>
+                </li>
+
+                <li>
+                    <p:link outcome="/app/Venda/mainVenda.xhtml">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        <span>Venda</span>
+                    </p:link>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <span>Financeiro</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <p:link outcome="/app/Financeiro/ContasPagar/mainContasPagar">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                        <span>Contas Pagar</span>
+                    </p:link>
+                </li>
+
+                <li>
+                    <p:link outcome="/app/Financeiro/ContasReceber/mainContasReceber">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <span>Contas Receber</span>
+                    </p:link>
+                </li>
+
+                <li>
+                    <p:link outcome="/app/Financeiro/ContaBancaria/mainConta.xhtml">
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                        <span>Conta Bancaria</span>
+                    </p:link>
+                </li>
+
+
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Relatorios</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-files-o"></i>
+                        <span>Cadastrais</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <p:link outcome="/app/Relatorios/Estado/relatorioEstado.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Estado</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/Cidade/relatorioCidade.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Cidade</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/PlanoPagamento/relatorioPlanoPag.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Planos de Pagamentos</span>
+                            </p:link>
+                        </li>
+
+                        <li>
+                            <p:link outcome="/app/Relatorios/Cliente/relatorioCliente.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Cliente</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/Funcionario/relatorioFuncionario.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Funcionario</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/Fornecedor/relatorioFornecedor.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Fornecedor</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/EstoqueAtual/relatorioEstoque.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Estoque Atual</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/ProdutoFornecedor/relatorioProdForn.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Produto fornecedor</span>
+                            </p:link>
+                        </li>
+                        <li>
+                            <p:link outcome="/app/Relatorios/ProdutoGrupoMarca/relatorioProd.xhtml">
+                                <i class="fa fa-home"></i>
+                                <span>Produto Grupo e marca</span>
+                            </p:link>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+
+    </ul>
+</ui:composition>

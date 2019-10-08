@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+            <b:growl id="messages" showDetail="true" />
+                <b:dataTable id="dataTableEndereco"
+                             value="#{pessoaController.selected.enderecos}"
+                             var="obj"
+                             widgetVar="estdtable"
+                             lang="br"
+                             info="true"
+                             fixedHeader="true"
+                             mark-search-results="true"
+                             page-length-menu="5,10,20"
+                             save-state="true"
+                             searching="true"
+                             select="#{enderecoController.endereco}"
+                             selectionMode="single"
+                             customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+                    <b:dataTableColumn label="CEP" value="#{obj.cep}"/>
+                    <b:dataTableColumn label="Bairro" value="#{obj.bairro}"/>
+                    <b:dataTableColumn label="Rua" value="#{obj.rua}"/>
+                    <b:dataTableColumn label="Numero" value="#{obj.numero}"/>
+                    <b:dataTableColumn label="Excluir" style="align-items: center;">
+                        <p:commandButton icon="#{icons.deletar}"
+                                         update="tabEnd:mainEndereco"
+                                         id="deletarEndereco"
+                                         immediate="true"
+                                         actionListener="#{enderecoController.removeEndereco(obj.pessoa)}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Editar" style="align-items: center;">
+                        <p:commandButton icon="#{icons.editar}"
+                                         immediate="true"
+                                         update="tabEnd:mainEndereco"
+                                         actionListener="#{enderecoController.editEndereco(obj)}"/>
+
+                    </b:dataTableColumn>
+                </b:dataTable>
+
+    </f:view>
+</html>

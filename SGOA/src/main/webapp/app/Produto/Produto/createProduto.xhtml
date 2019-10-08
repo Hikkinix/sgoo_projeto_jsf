@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <h:form>
+        <p:toolbar>
+            <f:facet name="left">
+                <p:outputLabel value="Produto"/>
+
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+
+                <p:commandButton value="Salvar"
+                                 icon="#{icons.salvar}"
+                                 ajax="false"
+                                 actionListener="#{produtoController.salvar()}"
+                />
+                <p:commandButton value="Voltar"
+                                 icon="#{icons.voltar}"
+                                 immediate="true"
+                                 update="mainProduto"
+                                 actionListener="#{produtoController.layoutList()}"/>
+
+
+            </f:facet>
+        </p:toolbar>
+
+        <b:panel title="Cadastro Produto" collapsible="false">
+            <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+                <p:outputLabel for="prodTipo" value="Tipo Produto:"/>
+                <p:selectOneMenu id="prodTipo"
+                                 value="#{produtoController.selected.tipoProduto}"
+                                 dynamic="true">
+                    <f:selectItems value="#{produtoController.selected.tipoProduto.listaTipoProduto}"
+                                   var="tip"
+                                   itemLabel="#{tip.descricao}"
+                                   itemValue="#{tip}"/>
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Nome:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.nomeProduto}"
+                             required="true"
+                             requiredMessage="O nome é obrigatório!"
+                             size="50"
+                             placeholder="Nome"
+                             style="text-transform: capitalize;"/>
+
+                <h:outputLabel value="Estoque:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.quantidade}"
+                             size="30"
+                             onkeypress="return somenteNumeros(event)"
+                             placeholder="Quantidade"/>
+
+                <h:outputLabel value="Minimo:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.qtdeMinima}"
+                             size="30"
+                             onkeypress="return somenteNumeros(event)"
+                             placeholder="Minimo"/>
+
+                <h:outputLabel value="Unidade:" style="font-weight:bold"/>
+                <p:autoComplete value="#{produtoController.selected.unidade}"
+                                completeMethod="#{unidadeController.listaFiltrando}"
+                                var="obj"
+                                size="50"
+                                required="true"
+                                requiredMessage="Defina a unidade do produto"
+                                placeholder="Unidade"
+                                forceSelection="true"
+                                itemLabel="#{obj.nomeUnidade}"
+                                itemValue="#{obj}"
+                                converter="#{unidadeController.converter}"
+                                dropdown="true"
+                />
+
+                <h:outputLabel value="Fabricante:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.codigoFabricante}"
+                             size="30"
+                             placeholder="Codigo Fabricante"/>
+
+                <h:outputLabel value="Marca:" style="font-weight:bold"/>
+                <p:autoComplete value="#{produtoController.selected.marca}"
+                                completeMethod="#{marcaController.listaFiltrando}"
+                                var="obj"
+                                size="50"
+                                placeholder="Marca"
+                                forceSelection="true"
+                                itemLabel="#{obj.nomeMarca}"
+                                itemValue="#{obj}"
+                                converter="#{marcaController.converter}"
+                                dropdown="true"
+                />
+
+                <h:outputLabel value="Preco de custo:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.precoCusto}"
+                             size="30"
+                             onkeypress="return somenteNumeros(event)"
+                             onkeydown="return mascaraMonetaria(this)"
+                             converter="#{produtoController.moneyconverter}"
+                             placeholder="Preço de custo"/>
+
+                <h:outputLabel value="Preço de venda:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.precoVenda}"
+                             size="30"
+                             required="true"
+                             requiredMessage="Defina Preco Venda"
+                             onkeypress="return somenteNumeros(event)"
+                             onkeydown="return mascaraMonetaria(this)"
+                             converter="#{produtoController.moneyconverter}"
+                             placeholder="Preço de venda"/>
+
+                <h:outputLabel value="Preço ultima compra:" style="font-weight:bold"/>
+                <b:inputText value="#{produtoController.selected.precoUltimaCompra}"
+                             size="30"
+                             onkeypress="return somenteNumeros(event)"
+                             onkeydown="return mascaraMonetaria(this)"
+                             converter="#{produtoController.moneyconverter}"
+                             disabled="true"
+                             placeholder="ultima compra"/>
+
+                <h:outputLabel value="Grupo:" style="font-weight:bold"/>
+                <p:autoComplete value="#{produtoController.selected.grupoProduto}"
+                                completeMethod="#{grupoController.listaFiltrandoProduto}"
+                                var="obj"
+                                size="50"
+                                forceSelection="true"
+                                placeholder="Grupo"
+                                dropdown="true"
+                                itemLabel="#{obj.nomeGrupo}"
+                                itemValue="#{obj}"
+                                converter="#{grupoController.converter}"
+                />
+
+                <h:outputLabel value="Ativo:" style="font-weight:bold"/>
+                <p:selectBooleanButton id="prodAtivo" value="#{produtoController.selected.produtoAtivo}"
+                                       onLabel="Sim" offLabel="Não"
+                                       onIcon="pi pi-check"
+                                       offIcon="pi pi-times"
+                                       style="width:20%px">
+                </p:selectBooleanButton>
+                <p:separator/>
+            </h:panelGrid>
+        </b:panel>
+    </h:form>
+
+</f:view>
+</html>

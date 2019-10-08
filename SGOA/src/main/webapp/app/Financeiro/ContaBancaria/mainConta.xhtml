@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="body">
+
+            <p:panel id="mainConta"
+                     style="border: none 0px;">
+
+                <p:panel style="border: none 0px;"
+                         visible="#{contaBancariaController.ativarList}">
+                    <ui:include src="listConta.xhtml"/>
+
+                </p:panel>
+
+                <p:panel visible="#{contaBancariaController.ativarView}"
+                         style="border: none 0px;">
+
+                    <ui:include src="viewConta.xhtml"/>
+
+                </p:panel>
+                <p:panel visible="#{contaBancariaController.ativarCreate}"
+                         style="border: none 0px;">
+                    <ui:include src="createConta.xhtml"/>
+
+                </p:panel>
+
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

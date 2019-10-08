@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <p:growl id="messages" showDetail="true"/>
+    <b:dataTable id="dataTableItemCompra"
+                 value="#{compraController.selected.itemCompraList}"
+                 var="obj"
+                 widgetVar="estdtable"
+                 lang="br"
+                 info="true"
+                 fixedHeader="true"
+                 mark-search-results="true"
+                 page-length-menu="5,10,20"
+                 save-state="true"
+                 searching="true"
+                 select="#{compraController.itemCompra}"
+                 selectionMode="single"
+                 customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+        <b:dataTableColumn label="Produto" value="#{obj.produto.nomeProduto}"/>
+
+        <b:dataTableColumn label="Quantidade" value="#{obj.quantidade}"/>
+
+        <b:dataTableColumn label="Valor Unitariosss">
+            <p:outputLabel value="#{obj.precoUnitario}" converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+
+        <b:dataTableColumn label="Desconto">
+            <p:outputLabel value="#{obj.desconto}" converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+
+        <b:dataTableColumn label="Total Liquido">
+            <p:outputLabel value="#{obj.precoLiquido}" converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+
+        <b:dataTableColumn label="Total Bruto">
+            <p:outputLabel value="#{obj.precoBruto}" converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+
+        <b:dataTableColumn label="Excluir" style="align-items: center;">
+            <p:commandButton icon="#{icons.deletar}"
+                             update="tabItem:mainProdutoItem"
+                             immediate="true"
+                             id="removeItem"
+                             actionListener="#{compraController.selected.removeItemCompra(obj)}"/>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Editar" style="align-items: center;">
+            <p:commandButton icon="#{icons.editar}"
+                             id="editItem"
+                             immediate="true"
+                             update="tabItem:mainProdutoItem"
+                             actionListener="#{compraController.setItemCompra(obj)}"/>
+
+        </b:dataTableColumn>
+    </b:dataTable>
+</f:view>
+</html>

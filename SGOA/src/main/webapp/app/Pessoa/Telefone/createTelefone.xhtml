@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <p:panel id="panelTelefone" title="Pessoa Telefone" collapsible="false">
+        <h:panelGrid id="grid" columns="1" cellpadding="4">
+
+            <h:outputLabel value="Numero:" style="font-weight:bold"/>
+
+            <b:inputText id="telefoneMaskTeste"
+                         value="#{telefoneController.telefone.numero}"
+                         required="true"
+                         onkeypress="return somenteNumeros(event)"
+                         requiredMessage="O Numero é obrigatório!"
+                         size="30"
+                         placeholder="(44) 9 0000 0000">
+                <f:convertNumber integerOnly="true"/>
+            </b:inputText>
+
+            <h:outputLabel value="Obs:" style="font-weight:bold"/>
+            <b:inputTextarea value="#{telefoneController.telefone.observacao}"
+                             placeholder="Obs"
+                             size="100"
+                             tooltipContainer="{0}"
+                             maxlength="155"
+                             id="observacao"/>
+            <h:outputLabel value="Ativo:" style="font-weight:bold"/>
+            <p:selectBooleanButton id="telAtivo" value="#{telefoneController.telefone.padrao}"
+                                   onLabel="Sim" offLabel="Não"
+                                   onIcon="pi pi-check"
+                                   offIcon="pi pi-times"
+                                   style="width:20%px">
+            </p:selectBooleanButton>
+            <hr/>
+        </h:panelGrid>
+
+        <p:commandButton value="Adicionar"
+                         icon="#{icons.adicionar}"
+                         update="mainTelefone"
+                         actionListener="#{telefoneController.addTelefone(pessoaController.selected)}"
+        />
+        <p:separator />
+        <br/>
+        <ui:include src="listTelefonePessoa.xhtml"/>
+    </p:panel>
+
+</f:view>
+</html>

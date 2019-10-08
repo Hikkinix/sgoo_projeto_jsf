@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <h:form>
+
+        <p:toolbar>
+            <f:facet name="left">
+                <p:outputLabel value="Plano Pagamento"/>
+
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+
+                <p:commandButton value="Salvar"
+                                 icon="#{icons.salvar}"
+                                 update="mainPlanoPagamento"
+                                 actionListener="#{planoPagamentoController.salvar()}"
+                />
+                <p:commandButton value="Voltar"
+                                 icon="#{icons.voltar}"
+                                 immediate="true"
+                                 update="mainPlanoPagamento"
+                                 actionListener="#{planoPagamentoController.layoutList()}"/>
+
+            </f:facet>
+        </p:toolbar>
+
+        <b:panel title="Cadastro PlanoPagamento" collapsible="false">
+            <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+                <h:outputLabel value="Nome:" style="font-weight:bold"/>
+
+                <b:inputText value="#{planoPagamentoController.selected.nomeFormPag}"
+                             required="true"
+                             requiredMessage="O nome é obrigatório!"
+                             size="50"
+                             placeholder="Nome"
+                             style="text-transform: capitalize;"/>
+
+                <h:outputLabel value="Quantidade Maxima Parcelas:" style="font-weight:bold"/>
+                <b:inputText value="#{planoPagamentoController.selected.numParcelas}"
+                             required="true"
+                             placeholder="parcelas"
+                             requiredMessage="A quantidade é obrigatório!"
+                             size="10"
+                             type="number"
+                             maxlength="2"
+                             id="quantidadeParcelas"
+                             onkeypress="return somenteNumeros(event)"
+                             disabled="#{planoPagamentoController.disableQtdParcelas()}"/>
+
+                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                    <p:outputLabel value="Tipo Plano Pagamneto:"/>
+                    <p:selectOneRadio id="planoPagamento" value="#{planoPagamentoController.selected.tipoPlano}">
+                        <f:selectItems value="#{planoPagamentoController.selected.tipoPlano.listaTipoPlanos}"
+                                       var="objGen"
+                                       itemLabel="#{objGen.descricao}"
+                                       itemValue="#{objGen}"/>
+                        <p:ajax event="change" update="quantidadeParcelas"/>
+                    </p:selectOneRadio>
+                </h:panelGrid>
+
+                <p:separator/>
+            </h:panelGrid>
+        </b:panel>
+    </h:form>
+
+</f:view>
+</html>

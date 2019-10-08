@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:form id="listasPlanoPagamento">    
+            <b:growl id="messages" showDetail="true" />
+            <p:toolbar>
+                <f:facet name="left">
+                    
+                    <p:commandButton value="Voltar"
+                                     action="/index"
+                                     icon="#{icons.voltar}"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Novo" icon="#{icons.novo}"
+                                     actionListener="#{planoPagamentoController.novo()}"
+                                     ajax="false"/>
+                    <p:commandButton update="mainPlanoPagamento"
+                                     icon="ui-icon-search"
+                                     rendered="false"
+                                     actionListener="#{planoPagamentoController.layoutView()}"
+                                     title="View"/>
+
+
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
+
+                    <p:outputLabel value="PlanoPagamento" />
+                </f:facet>
+            </p:toolbar>
+            <br/>
+                <b:dataTable id="dataTablePlanoPagamento"
+                             value="#{planoPagamentoController.listaTodos()}"
+                             var="obj">
+                    <b:dataTableColumn label="Codigo" value="#{obj.idFormaPag}"/>
+                    <b:dataTableColumn label="Nome" value="#{obj.nomeFormPag}"/>
+                    <b:dataTableColumn label="Tipo Plano" value="#{obj.tipoPlano.descricao}"/>
+                    <b:dataTableColumn label="Maximo Parcelas" value="#{obj.numParcelas}"/>
+                    <b:dataTableColumn label="Operações" style="align-items: center;">
+                        <p:commandButton icon="#{icons.deletar}"
+                                         update="mainPlanoPagamento"
+                                         actionListener="#{planoPagamentoController.excluir(obj)}"/>
+                        <p:commandButton icon="#{icons.editar}"
+                                         immediate="true"
+                                         update="mainPlanoPagamento"
+                                         actionListener="#{planoPagamentoController.editar(obj)}"/>
+
+                    </b:dataTableColumn>
+                </b:dataTable>
+
+        </h:form>
+    </f:view>
+</html>

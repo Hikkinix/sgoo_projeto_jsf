@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <b:growl id="messages" showDetail="true"/>
+
+    <p:toolbar>
+        <f:facet name="left">
+
+            <p:commandButton value="Voltar"
+                             action="/index"
+                             icon="#{icons.voltar}"
+                             ajax="false"/>
+
+            <p:commandButton value="Novo" icon="#{icons.novo}"
+                             actionListener="#{compraController.novoPedido()}"
+                             ajax="false"/>
+            <!--                    <p:commandButton update="Detail" oncomplete="PF('Dialog').show()" icon="ui-icon-search" title="View"/>-->
+            <p:commandButton update="mainCompra"
+                             icon="ui-icon-search"
+                             rendered="false"
+                             actionListener="#{compraController.layoutView()}"
+                             title="View"/>
+
+
+            <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+
+            <p:outputLabel value="Pedido Compra"/>
+        </f:facet>
+    </p:toolbar>
+    <br/>
+    <b:dataTable id="dataTableCompraPedido"
+                 value="#{compraController.listaCompraPedido()}"
+                 var="obj"
+                 widgetVar="estdtablePedido"
+                 lang="br"
+                 info="true"
+                 fixedHeader="true"
+                 mark-search-results="true"
+                 page-length-menu="5,10,20"
+                 save-state="true"
+                 searching="true"
+                 select="#{compraController.selected}"
+                 selectionMode="single"
+                 customLangUrl="//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json">
+
+        <b:dataTableColumn label="Codigo" value="#{obj.idCompra}"/>
+        <b:dataTableColumn label="Fornecedor" value="#{obj.fornecedor.nomePessoa}"/>
+        <b:dataTableColumn label="Data Compra" value="#{obj.dataCompra}"/>
+        <b:dataTableColumn label="Total Liquido">
+            <p:outputLabel value="#{obj.totalLiquido}"
+                           converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Total Bruto">
+            <p:outputLabel value="#{obj.totalBruto}"
+                           converter="#{compraController.moneyconverter}"/>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Cancelar" style="align-items: center;">
+            <p:commandButton icon="#{icons.deletar}"
+                             update="mainCompra"
+                             actionListener="#{compraController.cancelarCompra(obj)}"/>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Editar" style="align-items: center;">
+            <p:commandButton icon="#{icons.editar}"
+                             immediate="true"
+                             update="mainCompra"
+                             actionListener="#{compraController.editar(obj)}"/>
+
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Faturar" style="align-items: center;">
+            <p:commandButton icon="#{icons.pagar}"
+                             immediate="true"
+                             update="mainCompra"
+                             actionListener="#{compraController.faturar(obj)}"/>
+
+        </b:dataTableColumn>
+    </b:dataTable>
+
+    <p:dialog header="Info" widgetVar="DialogPedido" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="DetailPedido" style="text-align:center;">
+            <p:panelGrid columns="2" rendered="#{not empty compraController.listaTodos()}"
+                         columnClasses="label,value" style="width:300px">
+
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+
+
+</f:view>
+</html>

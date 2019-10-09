@@ -8,8 +8,8 @@ import br.com.sgoa.util.ReportsUtil;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.faces.context.FacesContext;
@@ -287,7 +287,7 @@ public class RelatorioController implements Serializable {
                     } else  {
                         filtro += "WHERE";
                     }
-                    filtro += " DATE(venda_data_faturamento) BETWEEN " + dataInicio +" AND " + dataFim + " ";
+                    filtro += " DATE(venda_data_faturamento) BETWEEN '" + dataInicio +"' AND '" + dataFim + "' ";
                 }
 
                 param.put("Filtro", filtro);
@@ -313,7 +313,7 @@ public class RelatorioController implements Serializable {
                     } else  {
                         filtro += "WHERE";
                     }
-                    filtro += " DATE(ven.venda_data_faturamento) BETWEEN " + dataInicio +" AND " + dataFim + " ";
+                    filtro += " DATE(ven.venda_data_faturamento) BETWEEN '" + dataInicio +"' AND '" + dataFim + "' ";
                 }
 
                 param.put("Filtro", filtro);
@@ -339,7 +339,7 @@ public class RelatorioController implements Serializable {
                     } else  {
                         filtro += "WHERE";
                     }
-                    filtro += " com.compra_data_faturamento BETWEEN DATE(" + dataInicio+") AND DATE(" + dataFim + ") ";
+                    filtro += " com.compra_data_faturamento BETWEEN '" + dataInicio+"' AND '" + dataFim + "' ";
                 }
 
                 param.put("Filtro", filtro);

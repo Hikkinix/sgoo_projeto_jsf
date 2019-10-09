@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relEstado" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
 	<property name="template.engine" value="tabular_template"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="databaseSGOA.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="1000"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
@@ -32,7 +34,7 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select p.*, e.*, t.*, c.* from pessoa as p
- Left join telefone as t on p.idpessoa = t.pessoa_propietaria 
+ Left join telefone as t on p.idpessoa = t.pessoa_propietaria
  left join endereco as e   on p.idpessoa = e.pessoa_idpessoa  and e.endereco_padrao = true
 left join cidade as c on c.idcidade = cidade
 where p. fornecedor_pessoa = true  or p.transportadora_pessoa = true
@@ -323,7 +325,7 @@ $P!{Filtro}]]>
 				<text><![CDATA[Telefone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="147" y="25" width="63" height="17" uuid="3df07e78-3ca7-49d1-88e5-a940aede0efa">
+				<reportElement positionType="Float" x="147" y="21" width="63" height="17" uuid="3df07e78-3ca7-49d1-88e5-a940aede0efa">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="800a1a67-7992-4bd2-ac1f-994505042cf5"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
@@ -332,7 +334,7 @@ $P!{Filtro}]]>
 				<text><![CDATA[Endereco]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="170" y="41" width="70" height="17" uuid="9151d8be-9287-4ef5-ab22-7190d38c52f6">
+				<reportElement positionType="Float" x="178" y="41" width="62" height="17" uuid="9151d8be-9287-4ef5-ab22-7190d38c52f6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="800a1a67-7992-4bd2-ac1f-994505042cf5"/>
 				</reportElement>
 				<box>

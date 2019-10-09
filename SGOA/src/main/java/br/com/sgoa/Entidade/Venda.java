@@ -2,7 +2,6 @@ package br.com.sgoa.Entidade;
 
 import br.com.sgoa.Enums.StatusVenda;
 import br.com.sgoa.Enums.TipoVenda;
-import com.sun.istack.internal.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -131,7 +130,6 @@ public class Venda implements Serializable, EntidadePai, Cloneable {
         }
     }
 
-    @NotNull
     public void removeItemVenda(ItemVenda item) {
         if (itemVendaList.contains(item)) {
             itemVendaList.remove(item);

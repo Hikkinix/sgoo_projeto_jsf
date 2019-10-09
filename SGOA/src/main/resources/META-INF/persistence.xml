@@ -23,15 +23,17 @@
     <class>br.com.sgoa.Entidade.Usuario</class>
     <class>br.com.sgoa.Entidade.Banco</class>
     <class>br.com.sgoa.Entidade.ContaBancaria</class>
+    <class>br.com.sgoa.Entidade.Material</class>
+    <class>br.com.sgoa.Entidade.MovimentaFinanceiro</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/databaseSGO"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="postgres"/>
-   <!--         <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <!--         <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
-        <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
     </properties>
   </persistence-unit>
 </persistence>

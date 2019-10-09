@@ -36,19 +36,20 @@
                         >
                         </p:autoComplete>
 
-                        <b:datepicker value="#{relatorioController.dataInicio}"
+                      <b:dateTimePicker value="#{relatorioController.dataInicio}"
                                           process="@this"
                                           id="datainicio"
                                           label="Data inicio:"
                                           disabled="#{!relatorioController.ativarFiltro}"
                                           iconAwesome="clock-o"/>
 
-                        <b:datepicker value="#{relatorioController.dataFim}"
+                        <b:dateTimePicker value="#{relatorioController.dataFim}"
                                           process="@this"
                                           id="datafim"
                                           disabled="#{!relatorioController.ativarFiltro}"
                                           label="Data Fim:"
                                           iconAwesome="clock-o"/>
+
 
                         <f:facet name="footer">
                             <p:commandButton value="Gerar"

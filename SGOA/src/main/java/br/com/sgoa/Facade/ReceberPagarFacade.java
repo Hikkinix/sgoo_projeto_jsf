@@ -34,6 +34,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         if (objeto != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
             efetuarPagamento(objeto);
         }
+        
         return super.salvar(objeto);
     }
 
@@ -41,7 +42,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         if (objeto.getConta() != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
             objeto.getConta().setSaldoDebitoConta(
                     objeto.getConta().getSaldoDebitoConta()
-                            .subtract(objeto.getValorLiquidar()));
+                    .subtract(objeto.getValorLiquidar()));
         }
         if (objeto.getParcelaCompra() != null) {
             Compra compra = objeto.getParcelaCompra().getCompra();
@@ -51,7 +52,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         em.merge(objeto);
     }
 
-    public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
+    public void gerarMovimentacao(ReceberPagar pagamento) throws Exception {
         MovimentaFinanceiro movimenta = new MovimentaFinanceiro();
         movimenta.setConta(pagamento.getConta());
         movimenta.setDataMovimento(new Date());
@@ -67,17 +68,20 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
             movimenta.setOrigemMovimento(OrigemMovimento.CONTARECEBER);
             movimenta.setIdOrigem(pagamento.getId());
         }
-        if (pagamento.getParcelaCompra() != null) {
-            movimenta.setOrigemMovimento(OrigemMovimento.COMPRA);
-            movimenta.setIdOrigem(pagamento.getParcelaCompra().getCompra().getId());
-        } else if (pagamento.getParcelaVenda() != null) {
-            movimenta.setOrigemMovimento(OrigemMovimento.VENDA);
-            movimenta.setIdOrigem(pagamento.getParcelaVenda().getVenda().getId());
-        }
+//        if (pagamento.getParcelaCompra() != null) {
+//            movimenta.setOrigemMovimento(OrigemMovimento.COMPRA);
+//            movimenta.setIdOrigem(pagamento.getParcelaCompra().getCompra().getId());
+//        } else if (pagamento.getParcelaVenda() != null) {
+//            movimenta.setOrigemMovimento(OrigemMovimento.VENDA);
+//            movimenta.setIdOrigem(pagamento.getParcelaVenda().getVenda().getId());
+//        }
 
         movimentoFacade.salvar(movimenta);
         pagamento.getMovimentacoes().add(movimenta);
+    }
 
+    public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
+        gerarMovimentacao(pagamento);
         movimentaCaixaConta(pagamento);
     }
 
@@ -100,7 +104,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
                 }
                 pagamento.getConta().setSaldoDebitoConta(
                         pagamento.getConta().getSaldoDebitoConta()
-                                .add(pagamento.getValorLiquidar()));
+                        .add(pagamento.getValorLiquidar()));
 
             }
         } else if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.RECEBER)) {
@@ -110,13 +114,12 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
                 }
                 pagamento.getConta().setSaldoCreditoConta(
                         pagamento.getConta().getSaldoCreditoConta()
-                                .add(pagamento.getValorLiquidar()));
+                        .add(pagamento.getValorLiquidar()));
 
             }
         }
 
     }
-
 
     public ContaBancaria localizarContaCaixa() throws Exception {
         if (!listarContas().isEmpty()) {
@@ -157,7 +160,6 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         Query q = getEntityManager().createQuery(hql);
         return q.getResultList() != null ? q.getResultList() : new ArrayList<ReceberPagar>();
     }
-
 
     public ReceberPagarFacade() {
         super(ReceberPagar.class);

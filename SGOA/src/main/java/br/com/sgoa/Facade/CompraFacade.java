@@ -70,6 +70,7 @@ public class CompraFacade extends AbstractFacade<Compra> {
     public void incluirEstoqueProduto(ItemCompra item) {
         item.getProduto().setQuantidade(item.getQuantidade().add(item.getProduto().getQuantidade()));
         item.getProduto().setPrecoUltimaCompra(item.getPrecoUnitario());
+        item.getProduto().setFornecedorProduto(item.getCompra().getFornecedor());
         produtoFacade.getEntityManager().merge(item.getProduto());
     }
 

@@ -31,36 +31,112 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from cidade as cid 
- inner join estado as est on est.idestado = cid.estado_cid
+		<![CDATA[select * from compra as com 
+inner join pessoa as p on idPessoa = fornecedor
   $P!{Filtro}]]>
 	</queryString>
-	<field name="idcidade" class="java.lang.Long">
-		<property name="com.jaspersoft.studio.field.label" value="idcidade"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="cidade"/>
+	<field name="idcompra" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="idcompra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
 	</field>
-	<field name="nome_cidade" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nome_cidade"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="cidade"/>
+	<field name="compra_desconto_total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_desconto_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
 	</field>
-	<field name="estado_cid" class="java.lang.Long">
-		<property name="com.jaspersoft.studio.field.label" value="estado_cid"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="cidade"/>
+	<field name="compratipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="compratipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
 	</field>
-	<field name="idestado" class="java.lang.Long">
-		<property name="com.jaspersoft.studio.field.label" value="idestado"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	<field name="compra_data_compra" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="compra_data_compra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
 	</field>
-	<field name="nome_estado" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nome_estado"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	<field name="compra_data_faturamento" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="compra_data_faturamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
 	</field>
-	<field name="uf_estado" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="uf_estado"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	<field name="compra_desconto" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_desconto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_desconto_porcentagem" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_desconto_porcentagem"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_num_nota_fiscal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="compra_num_nota_fiscal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_possui_frete" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="compra_possui_frete"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="statuscompra" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="statuscompra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_total_bruto" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_total_bruto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_total_liquido" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_total_liquido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="compra_valor_frete" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="compra_valor_frete"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="fornecedor" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="fornecedor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="funcionario" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+	</field>
+	<field name="idpessoa" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="idpessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cliente_pessoa" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="cliente_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="colaborador_pessoa" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="colaborador_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="fornecedor_pessoa" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="fornecedor_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="transportadora_pessoa" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="transportadora_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cpfcnpj_pessoa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cpfcnpj_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="email_pessoa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="genero_pessoa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="genero_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="nome_pessoa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="grupo_pessoa" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="grupo_pessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 	</field>
 	<variable name="idestado1" class="java.lang.Integer" resetType="Column" calculation="Count">
-		<variableExpression><![CDATA[$F{idcidade}]]></variableExpression>
+		<variableExpression><![CDATA[$F{idcompra}]]></variableExpression>
 	</variable>
 	<title>
 		<band height="87">
@@ -80,10 +156,6 @@
 				<reportElement x="465" y="10" width="84" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image hAlign="Center">
-				<reportElement x="0" y="0" width="65" height="60" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-				<imageExpression><![CDATA[$P{SUBREPORT_DIR} + "invoice_logo.png"]]></imageExpression>
-			</image>
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement x="465" y="30" width="84" height="20" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
 				<textFieldExpression><![CDATA[$P{p_user}]]></textFieldExpression>
@@ -112,13 +184,17 @@
 				<reportElement x="95" y="30" width="285" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
 				<text><![CDATA[ R. Getúlio Vargas, 960 - Centro, Paranavaí - PR, 87702-000]]></text>
 			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="65" height="60" uuid="96447561-bc41-46a6-9cea-943adda01648"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR} + "invoice_logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="50"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="34">
+		<band height="54">
 			<rectangle radius="3">
 				<reportElement positionType="FixRelativeToBottom" x="2" y="4" width="549" height="21" forecolor="#787575" backcolor="rgba(240, 241, 243, 0.0)" uuid="0606082a-05fa-46ee-9d0b-cab9814adb33"/>
 				<graphicElement>
@@ -135,7 +211,7 @@
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="107" y="4" width="343" height="21" uuid="2b56b8c5-a49d-4588-9119-2f988204f7e7">
+				<reportElement positionType="Float" x="107" y="4" width="173" height="21" uuid="2b56b8c5-a49d-4588-9119-2f988204f7e7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="171889bb-d05c-4286-a99d-37a3cf8c4175"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
@@ -144,45 +220,53 @@
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement positionType="Float" x="450" y="4" width="100" height="21" uuid="ecc8195d-b111-43fe-8799-aa3d8be234c3">
+				<reportElement positionType="Float" x="465" y="4" width="85" height="21" uuid="ecc8195d-b111-43fe-8799-aa3d8be234c3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Estado]]></text>
+				<text><![CDATA[R$ Liquido]]></text>
 			</staticText>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="24">
 			<textField>
-				<reportElement x="5" y="-1" width="100" height="21" uuid="59394dbb-0471-4f8f-a8a0-cdb9bb67d68e">
+				<reportElement x="5" y="29" width="100" height="21" uuid="d8a05eba-590e-4976-a2c4-747422598e11">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="800a1a67-7992-4bd2-ac1f-994505042cf5"/>
 				</reportElement>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idcidade}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idcompra}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="107" y="0" width="343" height="20" uuid="170efb9c-38ca-4810-95ac-5386db546ecf">
+				<reportElement x="107" y="30" width="173" height="20" uuid="eedf9177-6ceb-4693-bb28-697e8c1884e3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="171889bb-d05c-4286-a99d-37a3cf8c4175"/>
 				</reportElement>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nome_cidade}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nome_pessoa}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="450" y="0" width="100" height="20" uuid="cbb704ae-fee4-41c3-ac50-c9c81a4df7e6">
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="465" y="30" width="85" height="20" uuid="6696af77-153f-402f-81c2-6b45be7002fe">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
 				</reportElement>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nome_estado}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{compra_total_liquido}]]></textFieldExpression>
 			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67">
+			<subreport overflowType="NoStretch">
+				<reportElement x="5" y="3" width="545" height="60" uuid="8b6460fb-55fd-4f28-8678-98a06520328f"/>
+				<subreportParameter name="id_Compra">
+					<subreportParameterExpression><![CDATA[$F{idcompra}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Movimentos/Compra/itemCompraSubreport.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>
@@ -193,13 +277,13 @@
 				<textFieldExpression><![CDATA[$V{idestado1}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="380" y="1" width="75" height="21" uuid="1a611773-80d4-4a84-9a8d-ddc1f5a15bf5">
+				<reportElement positionType="Float" x="300" y="1" width="155" height="21" uuid="1a611773-80d4-4a84-9a8d-ddc1f5a15bf5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Total]]></text>
+				<text><![CDATA[Compra Realizadas]]></text>
 			</staticText>
 		</band>
 	</columnFooter>

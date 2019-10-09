@@ -8,8 +8,8 @@ import br.com.sgoa.util.ReportsUtil;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.faces.context.FacesContext;
@@ -33,7 +33,10 @@ public class RelatorioController implements Serializable {
     private RelatorioFacade relatorioFacade;
     @Getter
     @Setter
-    private Date filtro_data = new Date();
+    private Date dataFim;
+    @Getter
+    @Setter
+    private Date dataInicio;
     @Getter
     @Setter
     private TipoPlanoPagamento tipoPlano = TipoPlanoPagamento.APRAZO;
@@ -52,7 +55,7 @@ public class RelatorioController implements Serializable {
 
     @Getter
     @Setter
-    private Produto pessoa;
+    private Pessoa pessoa;
 
     @Getter
     @Setter
@@ -269,12 +272,81 @@ public class RelatorioController implements Serializable {
         }
     }
 
-    public Date getFiltro_data() {
-        return filtro_data;
+    public void gerarRelProdutoMaisVendidos(){
+        try {
+            String relatorio = "WEB-INF/reports/Produto/ProdutoMaisVendido/relProdmaisVendido.jasper";
+            Map<String, Object> param = getParameters();
+            if (ativarFiltro) {
+                String filtro = "";
+                if (produto != null) {
+                    filtro += " WHERE idproduto = " + produto.getId() + " ";
+                }
+                if (dataFim != null && dataInicio != null) {
+                    if (filtro.contains("WHERE")){
+                        filtro += " AND ";
+                    } else  {
+                        filtro += "WHERE";
+                    }
+                    filtro += " DATE(venda_data_faturamento) BETWEEN " + dataInicio +" AND " + dataFim + " ";
+                }
+
+                param.put("Filtro", filtro);
+            }
+            gerarRelPdf(relatorio, param);
+        } catch (Exception e) {
+            System.out.println("Teste");
+        }
     }
 
-    public void setFiltro_data(Date filtro_data) {
-        this.filtro_data = filtro_data;
+    public void gerarRelVendas(){
+        try {
+            String relatorio = "WEB-INF/reports/Movimentos/Venda/relVenda.jasper";
+            Map<String, Object> param = getParameters();
+            if (ativarFiltro) {
+                String filtro = "";
+                if (pessoa != null) {
+                    filtro += " WHERE ven.cliente = " + pessoa.getId() + " ";
+                }
+                if (dataFim != null && dataInicio != null) {
+                    if (filtro.contains("WHERE")){
+                        filtro += " AND ";
+                    } else  {
+                        filtro += "WHERE";
+                    }
+                    filtro += " DATE(ven.venda_data_faturamento) BETWEEN " + dataInicio +" AND " + dataFim + " ";
+                }
+
+                param.put("Filtro", filtro);
+            }
+            gerarRelPdf(relatorio, param);
+        } catch (Exception e) {
+            System.out.println("Teste");
+        }
     }
 
+    public void gerarRelCompras(){
+        try {
+            String relatorio = "WEB-INF/reports/Movimentos/Compra/relCompra.jasper";
+            Map<String, Object> param = getParameters();
+            if (ativarFiltro) {
+                String filtro = "";
+                if (pessoa != null) {
+                    filtro += " WHERE com.fornecedor = " + pessoa.getId() + " ";
+                }
+                if (dataFim != null && dataInicio != null) {
+                    if (filtro.contains("WHERE")){
+                        filtro += " AND ";
+                    } else  {
+                        filtro += "WHERE";
+                    }
+                    filtro += " com.compra_data_faturamento BETWEEN DATE(" + dataInicio+") AND DATE(" + dataFim + ") ";
+                }
+
+                param.put("Filtro", filtro);
+            }
+            gerarRelPdf(relatorio, param);
+        } catch (Exception e) {
+            System.out.println("Teste");
+        }
+    }
 }

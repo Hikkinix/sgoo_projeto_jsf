@@ -31,7 +31,7 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from formapagamento as forma  $P!{Filtro} ]]>
+		<![CDATA[select * from formapagamento as forma  $P!{Filtro}]]>
 	</queryString>
 	<field name="idformapag" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="idformapag"/>

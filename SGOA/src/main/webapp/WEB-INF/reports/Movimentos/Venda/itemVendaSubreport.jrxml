@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="itemVendaSubreport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4eccdbf-fd81-4640-be09-7226c061ef5a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="databaseSGOA.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="id_Venda" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[select * from itemVenda 
+inner join produto as p on p.idproduto = produto
+where venda =  $P{id_Venda} ]]>
+	</queryString>
+	<field name="iditemvenda" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="iditemvenda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="item_desconto_venda" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="item_desconto_venda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="item_preco_bruto" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="item_preco_bruto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="item_preco_liquido" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="item_preco_liquido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="item_preco_unitario" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="item_preco_unitario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="item_quantidade" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="item_quantidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="produto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="venda" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="venda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemvenda"/>
+	</field>
+	<field name="idproduto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="idproduto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_codigo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="produto_codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="produto_nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_preco_custo" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="produto_preco_custo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_preco_ultimacompra" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="produto_preco_ultimacompra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_preco_venda" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="produto_preco_venda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_ativo" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="produto_ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_qtd_min" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="produto_qtd_min"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_qtd" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="produto_qtd"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="produto_tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_grupo" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="produto_grupo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_marca" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="produto_marca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="produto_un" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="produto_un"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<variable name="item_preco_bruto1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_preco_bruto}]]></variableExpression>
+	</variable>
+	<columnHeader>
+		<band height="30">
+			<rectangle radius="8">
+				<reportElement positionType="FixRelativeToBottom" x="2" y="4" width="549" height="21" forecolor="#787575" backcolor="rgba(240, 241, 243, 0.0)" uuid="e8528fd0-efbd-4b1e-84b6-564a8867e78f"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="4" width="94" height="21" uuid="1137a0c7-14bd-483f-8227-daf283f26803">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="800a1a67-7992-4bd2-ac1f-994505042cf5"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="107" y="4" width="173" height="21" uuid="3e9eaa6c-c325-430e-acc6-85d39771f083">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="171889bb-d05c-4286-a99d-37a3cf8c4175"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="460" y="4" width="84" height="21" uuid="4f0ddea7-8e1a-453b-91dd-8f0107831006">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$ Liquido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="373" y="4" width="84" height="21" uuid="69407bb7-c56b-4200-bd86-104a4844eaf2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$ Bruto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="286" y="4" width="84" height="21" uuid="43f37e1f-c2c4-453c-a3db-5c3e730611dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$ QTD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="21" uuid="0f7af383-3043-4773-b5d8-53e7400ebe19">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="800a1a67-7992-4bd2-ac1f-994505042cf5"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{iditemvenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="4" width="173" height="20" uuid="2387860c-0cb1-4690-b8d0-a9afa57ef97e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="171889bb-d05c-4286-a99d-37a3cf8c4175"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_nome}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="460" y="1" width="85" height="20" uuid="b4475474-d13c-420d-940e-e0390557f42c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_preco_liquido}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="283" y="3" width="85" height="20" uuid="23953ee7-d42b-45e3-86b4-1dfbcf83d6e5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_quantidade}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="372" y="1" width="85" height="20" uuid="370e9e4b-fafe-4ff0-87c9-39bc2535cc91">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_preco_bruto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

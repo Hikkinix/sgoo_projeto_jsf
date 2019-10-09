@@ -55,17 +55,22 @@
 	itemvenda.venda,
 	itemvenda.produto,
 	sum( item_quantidade) AS qtdVendido,
-	p.produto_codigo
+	p.produto_codigo,
+	ven.idvenda,
+	ven.venda_data_faturamento
 FROM itemvenda
 	inner join produto AS p ON 
 	 p.idproduto = itemvenda.produto 
 	inner join unidade AS un ON 
 	 un.idunidade = p.produto_un 
 	 $P!{Filtro} 
+	INNER JOIN venda AS ven ON 
+	 itemvenda.venda = ven.idvenda 
 GROUP BY itemvenda.produto,
 	p.idproduto,
 	un.idunidade,
-	itemvenda.iditemvenda
+	itemvenda.iditemvenda,
+ven.idvenda
 ORDER BY qtdVendido DESC]]>
 	</queryString>
 	<field name="produto_nome" class="java.lang.String">
@@ -166,6 +171,14 @@ ORDER BY qtdVendido DESC]]>
 	<field name="produto_codigo" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="produto_codigo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="idvenda" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="idvenda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_data_faturamento" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="venda_data_faturamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
 	</field>
 	<variable name="idestado1" class="java.lang.Integer" resetType="Column" calculation="Count">
 		<variableExpression><![CDATA[$F{idproduto}]]></variableExpression>

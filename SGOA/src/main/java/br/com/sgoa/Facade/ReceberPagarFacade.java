@@ -2,15 +2,14 @@ package br.com.sgoa.Facade;
 
 import br.com.sgoa.Abstract.AbstractFacade;
 import br.com.sgoa.Entidade.*;
-import br.com.sgoa.Enums.StatusReceberPagar;
-import br.com.sgoa.Enums.TipoCompra;
-import br.com.sgoa.Enums.TipoReceberPagar;
+import br.com.sgoa.Enums.*;
 import br.com.sgoa.util.Transacional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Transacional
@@ -27,12 +26,15 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
     @Inject
     private BancoFacade bancoFacade;
 
+    @Inject
+    private MovimentoFinaceiroFacade movimentoFacade;
+
     @Override
     public ReceberPagar salvar(ReceberPagar objeto) throws Exception {
         if (objeto != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
             efetuarPagamento(objeto);
         }
-       return super.salvar(objeto);
+        return super.salvar(objeto);
     }
 
     public void estornar(ReceberPagar objeto) throws Exception {
@@ -50,6 +52,32 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
     }
 
     public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
+        MovimentaFinanceiro movimenta = new MovimentaFinanceiro();
+        movimenta.setConta(pagamento.getConta());
+        movimenta.setDataMovimento(new Date());
+        movimenta.setValorMovimento(pagamento.getValorLiquidar());
+
+        if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.PAGAR)) {
+            movimenta.setTipoMovimento(TipoMovimento.DEBITO);
+            movimenta.setOrigemMovimento(OrigemMovimento.CONTAPAGA);
+            movimenta.setIdOrigem(pagamento.getId());
+
+        } else if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.RECEBER)) {
+            movimenta.setTipoMovimento(TipoMovimento.CREDITO);
+            movimenta.setOrigemMovimento(OrigemMovimento.CONTARECEBER);
+            movimenta.setIdOrigem(pagamento.getId());
+        }
+        if (pagamento.getParcelaCompra() != null) {
+            movimenta.setOrigemMovimento(OrigemMovimento.COMPRA);
+            movimenta.setIdOrigem(pagamento.getParcelaCompra().getCompra().getId());
+        } else if (pagamento.getParcelaVenda() != null) {
+            movimenta.setOrigemMovimento(OrigemMovimento.VENDA);
+            movimenta.setIdOrigem(pagamento.getParcelaVenda().getVenda().getId());
+        }
+
+        movimentoFacade.salvar(movimenta);
+        pagamento.getMovimentacoes().add(movimenta);
+
         movimentaCaixaConta(pagamento);
     }
 

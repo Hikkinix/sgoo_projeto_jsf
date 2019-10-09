@@ -13,7 +13,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="SGOA" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="SGOA" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="SystemServiceMaven" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
     </option>
   </component>

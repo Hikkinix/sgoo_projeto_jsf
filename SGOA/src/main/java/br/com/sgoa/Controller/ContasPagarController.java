@@ -75,7 +75,7 @@ public class ContasPagarController extends AbstractController<ReceberPagar> impl
             } else {
                 ejbFacade.pagoPacrcial(super.getSelected());
             }
-            ejbFacade.efetuarPagamento(super.getSelected());
+           // ejbFacade.efetuarPagamento(super.getSelected());
             ativarPagamento = false;
             salvar();
         } catch (Exception e) {

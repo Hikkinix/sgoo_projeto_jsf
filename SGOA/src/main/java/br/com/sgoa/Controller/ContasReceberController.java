@@ -59,7 +59,7 @@ public class ContasReceberController extends AbstractController<ReceberPagar> im
 
         super.getSelected().setStatus(StatusReceberPagar.PAGA);
         super.getSelected().setTipoPlano(super.getSelected().getFormaPaga().getTipoPlano());
-        ejbFacade.efetuarPagamento(super.getSelected());
+     //   ejbFacade.efetuarPagamento(super.getSelected());
         salvar();
         ativaRecebimento = false;
         } catch (Exception e) {

@@ -257,6 +257,42 @@ inner join pessoa as p on idPessoa = cliente
 				</textElement>
 				<textFieldExpression><![CDATA[$F{venda_total_liquido}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="282" y="4" width="98" height="21" uuid="5dff117f-111a-4d68-b8e4-c720099541e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$ Desconto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="4" width="85" height="21" uuid="3e5c41c8-d581-4bb5-9438-a113df03b610">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$ Bruto]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="380" y="29" width="85" height="20" uuid="b72a450d-4e76-456d-9608-21006d20ced1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda_total_liquido}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="282" y="29" width="98" height="20" uuid="16b5b706-9e09-4439-a6ce-2795fa9f1731">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d7f7247-8752-4a4e-8c95-1a315a4baef8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda_desconto}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 	<detail>

@@ -127,7 +127,7 @@ public class VendaController extends AbstractController<Venda> implements Serial
                     contaReceber.setStatus(StatusReceberPagar.PAGA);
                 }
 
-                receberPagarFacade.efetuarPagamento(contaReceber);
+               // receberPagarFacade.efetuarPagamento(contaReceber);
                 receberPagarFacade.salvar(contaReceber);
                 i++;
             }

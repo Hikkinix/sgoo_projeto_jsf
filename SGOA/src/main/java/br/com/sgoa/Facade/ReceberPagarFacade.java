@@ -31,8 +31,14 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
 
     @Override
     public ReceberPagar salvar(ReceberPagar objeto) throws Exception {
-        if (objeto != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
-            efetuarPagamento(objeto);
+        if (objeto != null) {
+            gerarMovimentacaoFinanceira(objeto);
+            if (objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
+                efetuarPagamento(objeto);
+            }
+        } else {
+//            throws new Exception("Não existe Pagamento");
+            System.out.println("TESTE");
         }
         return super.salvar(objeto);
     }
@@ -51,7 +57,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         em.merge(objeto);
     }
 
-    public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
+    public void gerarMovimentacaoFinanceira(ReceberPagar pagamento) throws Exception {
         MovimentaFinanceiro movimenta = new MovimentaFinanceiro();
         movimenta.setConta(pagamento.getConta());
         movimenta.setDataMovimento(new Date());
@@ -78,6 +84,9 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         movimentoFacade.salvar(movimenta);
         pagamento.getMovimentacoes().add(movimenta);
 
+    }
+
+    public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
         movimentaCaixaConta(pagamento);
     }
 

@@ -130,7 +130,7 @@ public class ReceberPagar implements Serializable, EntidadePai {
 
     @OneToMany(cascade = CascadeType.ALL,
             orphanRemoval = true,
-            mappedBy = "compra",
+            mappedBy = "receberPagar",
             fetch = FetchType.LAZY)
     @Getter
     @Setter

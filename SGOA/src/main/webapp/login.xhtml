@@ -16,22 +16,26 @@
     </style>
 </h:head>
 <h:body style="padding-top: 60px;">
-    <b:container>
-        <h:form styleClass="form-signin" prependId="false">
-            <h2 class="form-signin-heading" style="align-items: center;">Login</h2>
-            <b:inputText id="email" placeholder="Login"  value="#{loginController.usuario.login}">
-                <f:facet name="prepend">
-                    <b:icon name="user" />
-                </f:facet>
-            </b:inputText>
-            <b:inputText id="password" placeholder="Password" type="password"  value="#{loginController.usuario.senha}">
-                <f:facet name="prepend">
-                    <b:iconAwesome name="key" />
-                </f:facet>
-            </b:inputText>
-<!--            <b:selectBooleanCheckbox value="true" caption="remember me"/>-->
-            <b:commandButton look="inverse btn-block" value="Logar" actionListener="#{loginController.logar}" icon="log-in" size="lg"/>
-        </h:form>
-    </b:container>
+<!--    <b:jumbotron>-->
+        <b:container>
+            <h:form styleClass="form-signin" prependId="false">
+                <h2 class="form-signin-heading" style="align-items: center;">Login</h2>
+                <b:inputText id="email" placeholder="Login" value="#{loginController.usuario.login}">
+                    <f:facet name="prepend">
+                        <b:icon name="user"/>
+                    </f:facet>
+                </b:inputText>
+                <b:inputText id="password" placeholder="Password" type="password"
+                             value="#{loginController.usuario.senha}">
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="key"/>
+                    </f:facet>
+                </b:inputText>
+                <!--            <b:selectBooleanCheckbox value="true" caption="remember me"/>-->
+                <b:commandButton look="inverse btn-block" value="Logar" actionListener="#{loginController.logar}"
+                                 icon="log-in" size="lg"/>
+            </h:form>
+        </b:container>
+<!--    </b:jumbotron>-->
 </h:body>
 </html>

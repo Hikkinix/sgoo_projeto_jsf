@@ -2,41 +2,37 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SGOA:war exploded" />
+      <artifact name="SystemServiceMaven:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8712521d-5069-4995-adb2-e272c5d556b8" name="Default Changelist" comment="MOdulo financeiro implantado e modulo compra finalizado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/OrigemMovimento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/TipoMovimento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/MovimentoFinaceiroFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/itemCompraSubreport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/relCompra.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/itemVendaSubreport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/relVenda.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/CompraFiltrando/relatorioCompra.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/ProdutoMaisVendido/relatorioProdVendas.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando/relatorioVendas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/PerfilUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/createUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/listUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/mainUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/viewUsuario.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/RelatorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/RelatorioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasReceberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasReceberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/relatoriosSGOA/Localidade/Estado/relEstado.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/relatoriosSGOA/teste.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/FormaPagamento/relFomaPagamentos.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/FormaPagamento/relFomaPagamentos.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Localidade/Cidade/relCidade.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Localidade/Cidade/relCidade.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Produto/ProdutoMaisVendido/relProdmaisVendido.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Produto/ProdutoMaisVendido/relProdmaisVendido.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Login_v1/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Login/Login_v1/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/RelatorioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/RelatorioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/UsuarioFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/UsuarioFacade.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +42,20 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,6 +68,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/CompraFacade.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
@@ -83,22 +94,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app" />
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports" />
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.com.sgoa.Facade" />
       <recent name="br.com.sgoa.Enums" />
+      <recent name="br.com.sgoa.Controller" />
+      <recent name="br.com.sgoa.Facade" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app" />
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Login" />
     </key>
   </component>
@@ -114,11 +128,86 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="SGOA" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
+  <component name="RunManager" selected="Tomcat Server.SGOA">
+    <configuration name="SGOA (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="SGOA:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/local" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="SGOA_(1)_SystemServiceMaven_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="45223" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SystemServiceMaven:war exploded" />
+          <artifact name="SGOA:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="SGOA" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="SystemServiceMaven:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/local" />
           </settings>
@@ -188,6 +277,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.SGOA" />
+      <item itemvalue="Tomcat Server.SGOA (1)" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -205,6 +298,10 @@
       <workItem from="1570580589468" duration="365000" />
       <workItem from="1570582746271" duration="2381000" />
       <workItem from="1570588145066" duration="4381000" />
+      <workItem from="1570635797326" duration="1093000" />
+      <workItem from="1570660065249" duration="4094000" />
+      <workItem from="1570808858780" duration="2362000" />
+      <workItem from="1570832587013" duration="840000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,10 @@
 package br.com.sgoa.Entidade;
 
+import br.com.sgoa.Enums.PerfilUsuario;
 import br.com.sgoa.util.MD5;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -10,61 +14,30 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter @Setter
     private Long idUsuario;
 
     @Column(name = "login_usuario")
+    @Getter @Setter
     private String login;
 
     @Column(name = "senha_usuario")
+    @Getter @Setter
     private String senha;
 
     @Transient
+    @Getter @Setter
     private String comfirmarsenha;
 
     @JoinColumn(name = "pessoa")
-    @ManyToOne
+    @OneToOne
+    @Getter @Setter
     private Pessoa pessoa;
 
+    @Column(name = "perfil")
+    @Getter @Setter
+    private PerfilUsuario perfilUsuario;
 
-    public Long getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) throws Exception {
-        this.senha = MD5.main(senha);
-    }
-
-    public String getComfirmarsenha() {
-        return comfirmarsenha;
-    }
-
-    public void setComfirmarsenha(String comfirmarsenha) throws Exception {
-        this.comfirmarsenha = MD5.main(comfirmarsenha);
-    }
 
     @Override
     public boolean equals(Object o) {

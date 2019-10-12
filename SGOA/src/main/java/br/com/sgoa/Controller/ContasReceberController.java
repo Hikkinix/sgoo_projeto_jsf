@@ -56,12 +56,13 @@ public class ContasReceberController extends AbstractController<ReceberPagar> im
 
     public void pagar() {
         try {
-
-        super.getSelected().setStatus(StatusReceberPagar.PAGA);
-        super.getSelected().setTipoPlano(super.getSelected().getFormaPaga().getTipoPlano());
-        ejbFacade.efetuarPagamento(super.getSelected());
-        salvar();
-        ativaRecebimento = false;
+            if (super.getSelected().getValorTotalpago().add(super.getSelected().getValorLiquidar())
+                    .compareTo(super.getSelected().getValorTotalPagar()) == 0) {
+                super.getSelected().setStatus(StatusReceberPagar.PAGA);
+            }
+            super.getSelected().setTipoPlano(super.getSelected().getFormaPaga().getTipoPlano());
+            salvar();
+            ativaRecebimento = false;
         } catch (Exception e) {
             errorMensagem("Erro:" + e);
         }

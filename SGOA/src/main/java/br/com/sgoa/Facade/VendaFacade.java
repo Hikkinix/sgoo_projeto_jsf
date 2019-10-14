@@ -73,10 +73,14 @@ public class VendaFacade extends AbstractFacade<Venda> {
         try {
             if (item.getProduto().getQuantidade().compareTo(item.getQuantidade()) >= 0) {
                 item.getProduto().setQuantidade(item.getProduto().getQuantidade().subtract(item.getQuantidade()));
-                produtoFacade.getEntityManager().merge(item.getProduto());
+                produtoFacade.salvar(item.getProduto());
+            } else {
+
+                throw new Exception("Estoque Insuficiente");
             }
+
         } catch (Exception e) {
-            throw new Exception("Erro ao estornar Produto");
+            throw new Exception("Erro item venda:");
         }
     }
 }

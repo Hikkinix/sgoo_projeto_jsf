@@ -349,4 +349,28 @@ public class RelatorioController implements Serializable {
             System.out.println("Teste");
         }
     }
+
+    public void gerarRelLucro(){
+        try {
+            String relatorio = "WEB-INF/reports/Movimentos/Lucro/relLucro.jasper";
+            Map<String, Object> param = getParameters();
+            if (ativarFiltro) {
+                String filtro = "";
+                if (dataFim != null && dataInicio != null) {
+                    if (filtro.contains("WHERE")){
+                        filtro += " AND ";
+                    } else  {
+                        filtro += "WHERE";
+                    }
+                    filtro += " DATE(mc.movimento_data) BETWEEN '" + dataInicio +"' AND '" + dataFim + "' ";
+                }
+
+                param.put("Filtro", filtro);
+            }
+            gerarRelPdf(relatorio, param);
+        } catch (Exception e) {
+            System.out.println("Teste");
+        }
+    }
+
 }

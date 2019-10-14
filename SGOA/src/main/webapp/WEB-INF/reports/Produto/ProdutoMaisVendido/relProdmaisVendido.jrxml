@@ -63,9 +63,9 @@ FROM itemvenda
 	 p.idproduto = itemvenda.produto 
 	inner join unidade AS un ON 
 	 un.idunidade = p.produto_un 
-	 $P!{Filtro} 
 	INNER JOIN venda AS ven ON 
 	 itemvenda.venda = ven.idvenda 
+	  	 	  	 $P!{Filtro} 
 GROUP BY itemvenda.produto,
 	p.idproduto,
 	un.idunidade,

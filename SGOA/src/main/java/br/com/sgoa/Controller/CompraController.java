@@ -103,7 +103,7 @@ public class CompraController extends AbstractController<Compra> implements Seri
                 cal.add(Calendar.MONTH, 1);
                 cal.add(Calendar.DAY_OF_MONTH, parcela.getDiaVencimento());
 
-                contaPagar.setFornecedorRecebedor(super.getSelected().getFornecedor());
+                contaPagar.setPessoa(super.getSelected().getFornecedor());
                 contaPagar.setDiaVencimento(cal.getTime());
                 contaPagar.setNumParcela(parcela.getNumAtualParcela());
                 contaPagar.setTotalParcelas(parcela.getNumParcela());
@@ -127,7 +127,6 @@ public class CompraController extends AbstractController<Compra> implements Seri
                     contaPagar.setStatus(StatusReceberPagar.PAGA);
                 }
 
-                receberPagarFacade.efetuarPagamento(contaPagar);
                 receberPagarFacade.salvar(contaPagar);
                 i++;
             }

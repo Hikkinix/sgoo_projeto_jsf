@@ -49,14 +49,8 @@ public class ReceberPagar implements Serializable, EntidadePai {
     @ManyToOne(cascade = CascadeType.ALL)
     @Getter
     @Setter
-    private Pessoa fornecedorRecebedor;
+    private Pessoa pessoa;
 
-
-    @JoinColumn(name = "pagador", referencedColumnName = "idPessoa")
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Getter
-    @Setter
-    private Pessoa clientePagador;
 
     @JoinColumn(name = "parcela_compra", referencedColumnName = "idParcelas")
     @ManyToOne(cascade = CascadeType.ALL, optional = true)
@@ -131,7 +125,7 @@ public class ReceberPagar implements Serializable, EntidadePai {
     @OneToMany(cascade = CascadeType.ALL,
             orphanRemoval = true,
             mappedBy = "receberPagar",
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER)
     @Getter
     @Setter
     private List<MovimentaFinanceiro> movimentacoes = new ArrayList<>();
@@ -145,8 +139,7 @@ public class ReceberPagar implements Serializable, EntidadePai {
         this.totalParcelas = receberPagar.getTotalParcelas();
         this.diaVencimento = receberPagar.getDiaVencimento();
         this.conta = receberPagar.getConta();
-        this.fornecedorRecebedor = receberPagar.getFornecedorRecebedor();
-        this.clientePagador = receberPagar.getClientePagador();
+        this.pessoa = receberPagar.getPessoa();
         this.parcelaCompra = receberPagar.getParcelaCompra();
         this.parcelaVenda = receberPagar.getParcelaVenda();
         this.valorTotalPagar = receberPagar.getValorTotalPagar();
@@ -168,9 +161,9 @@ public class ReceberPagar implements Serializable, EntidadePai {
 
     public BigDecimal getValorTotalpago() {
         BigDecimal valorPago = BigDecimal.ZERO;
-        if (movimentacoes != null && !movimentacoes.isEmpty()){
-        for (MovimentaFinanceiro mov : movimentacoes)
-            valorPago = valorPago.add(mov.getValorMovimento());
+        if (movimentacoes != null && !movimentacoes.isEmpty()) {
+            for (MovimentaFinanceiro mov : movimentacoes)
+                valorPago = valorPago.add(mov.getValorMovimento());
         }
         return valorPago;
     }

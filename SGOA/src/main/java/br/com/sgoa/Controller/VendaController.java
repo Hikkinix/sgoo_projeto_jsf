@@ -73,7 +73,7 @@ public class VendaController extends AbstractController<Venda> implements Serial
 
     public void informarProduto() {
         if (itemVenda.getProduto() != null) {
-            itemVenda.setPrecoUnitario(itemVenda.getProduto().getPrecoCusto());
+            itemVenda.setPrecoUnitario(itemVenda.getProduto().getPrecoVenda());
         }
     }
 
@@ -103,7 +103,7 @@ public class VendaController extends AbstractController<Venda> implements Serial
                 cal.add(Calendar.MONTH, 1);
                 cal.add(Calendar.DAY_OF_MONTH, parcela.getDiaVencimento());
 
-                contaReceber.setClientePagador(super.getSelected().getCliente());
+                contaReceber.setPessoa(super.getSelected().getCliente());
                 contaReceber.setDiaVencimento(cal.getTime());
                 contaReceber.setNumParcela(parcela.getNumAtualParcela());
                 contaReceber.setTotalParcelas(parcela.getNumParcela());
@@ -127,7 +127,6 @@ public class VendaController extends AbstractController<Venda> implements Serial
                     contaReceber.setStatus(StatusReceberPagar.PAGA);
                 }
 
-               // receberPagarFacade.efetuarPagamento(contaReceber);
                 receberPagarFacade.salvar(contaReceber);
                 i++;
             }

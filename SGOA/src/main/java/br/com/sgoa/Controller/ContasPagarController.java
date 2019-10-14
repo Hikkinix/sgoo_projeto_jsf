@@ -35,6 +35,10 @@ public class ContasPagarController extends AbstractController<ReceberPagar> impl
     @Setter
     private boolean ativarPagamento = false;
 
+    @Getter
+    @Setter
+    private boolean contaAvulsa = false;
+
 
     @Getter
     @Setter
@@ -43,6 +47,7 @@ public class ContasPagarController extends AbstractController<ReceberPagar> impl
     public void pagamento(ReceberPagar teste) {
         super.setSelected(teste);
         if (super.getSelected() != null) {
+            contaAvulsa = true;
             ativarPagamento = true;
             super.setAtivarCreate(false);
             super.setAtivarList(false);
@@ -67,17 +72,21 @@ public class ContasPagarController extends AbstractController<ReceberPagar> impl
 
     public void pagar() {
         try {
+            if (super.getSelected().getConta() != null) {
+                super.getSelected().setTipoPlano(super.getSelected().getFormaPaga().getTipoPlano());
 
-            super.getSelected().setTipoPlano(super.getSelected().getFormaPaga().getTipoPlano());
+                if (contaAvulsa){
+                    super.getSelected().setValorTotalPagar(super.getSelected().getValorLiquidar());
+                }
+                if (super.getSelected().getValorRestate().add(super.getSelected().getValorLiquidar())
+                        .compareTo(BigDecimal.ZERO) == 0) {
+                    super.getSelected().setStatus(StatusReceberPagar.PAGA);
+                }
 
-            if (super.getSelected().getValorRestate().compareTo(BigDecimal.ZERO) == 0) {
-                super.getSelected().setStatus(StatusReceberPagar.PAGA);
-            } else {
-                ejbFacade.pagoPacrcial(super.getSelected());
+                salvar();
+                ativarPagamento = false;
+                super.layoutList();
             }
-           // ejbFacade.efetuarPagamento(super.getSelected());
-            ativarPagamento = false;
-            salvar();
         } catch (Exception e) {
             errorMensagem("Erro:" + e);
         }

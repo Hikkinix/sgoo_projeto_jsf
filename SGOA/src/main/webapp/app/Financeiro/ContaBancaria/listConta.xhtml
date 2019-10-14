@@ -64,9 +64,6 @@
                                        converter="#{compraController.moneyconverter}"/>
                     </b:dataTableColumn>
                     <b:dataTableColumn label="Operações" style="align-items: center;">
-                        <p:commandButton icon="#{icons.deletar}"
-                                         update="mainConta"
-                                         actionListener="#{contaBancariaController.excluir(obj)}"/>
                         <p:commandButton icon="#{icons.editar}"
                                          immediate="true"
                                          update="mainConta"

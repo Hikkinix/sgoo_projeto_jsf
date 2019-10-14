@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "movimentacaoFinanceiro")
+@Table(name = "movimentaContas")
 public class MovimentaFinanceiro implements Serializable, EntidadePai{
 
     private static final long serialVersionUID = 1L;

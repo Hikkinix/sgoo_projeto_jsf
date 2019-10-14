@@ -7,36 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8712521d-5069-4995-adb2-e272c5d556b8" name="Default Changelist" comment="MOdulo financeiro implantado e modulo compra finalizado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/OrigemMovimento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/TipoMovimento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/MovimentoFinaceiroFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/itemCompraSubreport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Compra/relCompra.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/itemVendaSubreport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Movimentos/Venda/relVenda.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/CompraFiltrando/relatorioCompra.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/ProdutoMaisVendido/relatorioProdVendas.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando/relatorioVendas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/LucroFiltrando/relatorioLucro.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/CompraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasPagarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasPagarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/RelatorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/RelatorioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/VendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemCompra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/relatoriosSGOA/Localidade/Estado/relEstado.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/relatoriosSGOA/teste.jasper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/VendaFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/VendaFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/FormaPagamento/relFomaPagamentos.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/FormaPagamento/relFomaPagamentos.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Localidade/Cidade/relCidade.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Localidade/Cidade/relCidade.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Produto/ProdutoMaisVendido/relProdmaisVendido.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Produto/ProdutoMaisVendido/relProdmaisVendido.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Login_v1/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Login/Login_v1/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Usuario/relUsuario.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/Usuario/relUsuario.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContaBancaria/listConta.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContaBancaria/listConta.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasPagar/Pagamento.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasPagar/Pagamento.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Cancelada.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Cancelada.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Receber.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Receber.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Recebida.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/Recebida.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/createContasReceber.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Financeiro/ContasReceber/createContasReceber.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Venda/Cliente/resumoCliente.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Venda/Cliente/resumoCliente.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/CompraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/CompraController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasPagarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasPagarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/RelatorioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/RelatorioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/VendaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Produto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Venda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/CompraFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/CompraFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/VendaFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/VendaFacade.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,23 +90,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documentos/SGP" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Login" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.com.sgoa.Facade" />
       <recent name="br.com.sgoa.Enums" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/app/Login" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -204,7 +211,15 @@
       <workItem from="1570578458234" duration="1898000" />
       <workItem from="1570580589468" duration="365000" />
       <workItem from="1570582746271" duration="2381000" />
-      <workItem from="1570588145066" duration="4381000" />
+      <workItem from="1570588145066" duration="5102000" />
+      <workItem from="1570746428413" duration="174000" />
+      <workItem from="1570747344802" duration="4072000" />
+      <workItem from="1570751923270" duration="121000" />
+      <workItem from="1570753914543" duration="1992000" />
+      <workItem from="1570758923028" duration="4000" />
+      <workItem from="1570759430714" duration="703000" />
+      <workItem from="1570995795140" duration="197000" />
+      <workItem from="1570997999054" duration="87000" />
     </task>
     <servers />
   </component>
@@ -241,6 +256,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/RelatorioController.java</url>
           <line>78</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

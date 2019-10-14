@@ -34,7 +34,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         if (objeto != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
             efetuarPagamento(objeto);
         }
-        
+
         return super.salvar(objeto);
     }
 
@@ -42,7 +42,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
         if (objeto.getConta() != null && objeto.getStatus().equals(StatusReceberPagar.PAGA)) {
             objeto.getConta().setSaldoDebitoConta(
                     objeto.getConta().getSaldoDebitoConta()
-                    .subtract(objeto.getValorLiquidar()));
+                            .subtract(objeto.getValorLiquidar()));
         }
         if (objeto.getParcelaCompra() != null) {
             Compra compra = objeto.getParcelaCompra().getCompra();
@@ -53,21 +53,23 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
     }
 
     public void gerarMovimentacao(ReceberPagar pagamento) throws Exception {
-        MovimentaFinanceiro movimenta = new MovimentaFinanceiro();
-        movimenta.setConta(pagamento.getConta());
-        movimenta.setDataMovimento(new Date());
-        movimenta.setValorMovimento(pagamento.getValorLiquidar());
+        if (pagamento.getStatus().equals(StatusReceberPagar.PAGA)) {
+            MovimentaFinanceiro movimenta = new MovimentaFinanceiro();
+            movimenta.setConta(pagamento.getConta());
+            movimenta.setDataMovimento(new Date());
+            movimenta.setValorMovimento(pagamento.getValorLiquidar());
 
-        if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.PAGAR)) {
-            movimenta.setTipoMovimento(TipoMovimento.DEBITO);
-            movimenta.setOrigemMovimento(OrigemMovimento.CONTAPAGA);
-            movimenta.setIdOrigem(pagamento.getId());
+            if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.PAGAR)) {
+                movimenta.setTipoMovimento(TipoMovimento.DEBITO);
+                movimenta.setOrigemMovimento(OrigemMovimento.CONTAPAGA);
+                movimenta.setIdOrigem(pagamento.getId());
 
-        } else if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.RECEBER)) {
-            movimenta.setTipoMovimento(TipoMovimento.CREDITO);
-            movimenta.setOrigemMovimento(OrigemMovimento.CONTARECEBER);
-            movimenta.setIdOrigem(pagamento.getId());
-        }
+            } else if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.RECEBER)) {
+                movimenta.setTipoMovimento(TipoMovimento.CREDITO);
+                movimenta.setOrigemMovimento(OrigemMovimento.CONTARECEBER);
+                movimenta.setIdOrigem(pagamento.getId());
+            }
+
 //        if (pagamento.getParcelaCompra() != null) {
 //            movimenta.setOrigemMovimento(OrigemMovimento.COMPRA);
 //            movimenta.setIdOrigem(pagamento.getParcelaCompra().getCompra().getId());
@@ -76,12 +78,13 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
 //            movimenta.setIdOrigem(pagamento.getParcelaVenda().getVenda().getId());
 //        }
 
-        movimentoFacade.salvar(movimenta);
-        pagamento.getMovimentacoes().add(movimenta);
+            movimenta.setReceberPagar(pagamento);
+            pagamento.getMovimentacoes().add(movimenta);
+//            movimentoFacade.salvar(movimenta);
+        }
     }
 
     public void efetuarPagamento(ReceberPagar pagamento) throws Exception {
-        gerarMovimentacao(pagamento);
         movimentaCaixaConta(pagamento);
     }
 
@@ -104,7 +107,7 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
                 }
                 pagamento.getConta().setSaldoDebitoConta(
                         pagamento.getConta().getSaldoDebitoConta()
-                        .add(pagamento.getValorLiquidar()));
+                                .add(pagamento.getValorLiquidar()));
 
             }
         } else if (pagamento.getTipoReceberPagar().equals(TipoReceberPagar.RECEBER)) {
@@ -114,10 +117,11 @@ public class ReceberPagarFacade extends AbstractFacade<ReceberPagar> {
                 }
                 pagamento.getConta().setSaldoCreditoConta(
                         pagamento.getConta().getSaldoCreditoConta()
-                        .add(pagamento.getValorLiquidar()));
+                                .add(pagamento.getValorLiquidar()));
 
             }
         }
+        gerarMovimentacao(pagamento);
 
     }
 

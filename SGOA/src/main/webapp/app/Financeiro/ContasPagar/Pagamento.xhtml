@@ -100,8 +100,7 @@
                              onkeydown="return mascaraMonetaria(this)"
                              converter="#{contasPagarController.moneyconverter}"
                              placeholder="valor a pagar"
-                             disabled="#{contasPagarController.ativarPagamento}">
-                    <f:convertNumber integerOnly="true"/>
+                             disabled="#{!contasPagarController.ativarPagamento}">
                 </b:inputText>
 
                 <h:outputLabel value="Valor Restante a pagar" style="font-weight:bold"/>

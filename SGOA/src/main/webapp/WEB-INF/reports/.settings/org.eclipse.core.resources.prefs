@@ -4,6 +4,7 @@ encoding//Localidade/Cidade/relCidade.jrxml=UTF-8
 encoding//Localidade/Estado/relEstado.jrxml=UTF-8
 encoding//Movimentos/Compra/itemCompraSubreport.jrxml=UTF-8
 encoding//Movimentos/Compra/relCompra.jrxml=UTF-8
+encoding//Movimentos/Lucro/relLucro.jrxml=UTF-8
 encoding//Movimentos/Venda/itemVendaSubreport.jrxml=UTF-8
 encoding//Movimentos/Venda/relVenda.jrxml=UTF-8
 encoding//Pessoa/Cliente/relCliente.jrxml=UTF-8

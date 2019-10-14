@@ -63,7 +63,7 @@ public class ItemVenda implements Serializable {
     }
 
     public BigDecimal getPrecoLiquido() {
-        return getPrecoBruto().subtract(getDesconto().multiply(getQuantidade()));
+        return getPrecoBruto().subtract(getDesconto());
     }
 
     @Override

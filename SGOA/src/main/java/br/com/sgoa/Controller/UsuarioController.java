@@ -39,7 +39,7 @@ public class UsuarioController extends AbstractController<Usuario> implements Se
 
     @Override
     protected Class getClasse() {
-       return Unidade.class;
+       return Usuario.class;
     }
 
     @Override

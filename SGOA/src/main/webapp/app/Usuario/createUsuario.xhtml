@@ -38,7 +38,7 @@
                 <p:selectOneMenu id="prodTipo"
                                  value="#{usuarioController.selected.perfilUsuario}"
                                  dynamic="true">
-                    <f:selectItems value="#{usuarioController.selected.perfilUsuario.listaGenero}"
+                    <f:selectItems value="#{usuarioController.selected.perfilUsuario.listaGenero()}"
                                    var="tip"
                                    itemLabel="#{tip.descricao}"
                                    itemValue="#{tip}"/>

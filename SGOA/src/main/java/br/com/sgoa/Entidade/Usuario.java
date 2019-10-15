@@ -14,28 +14,35 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter @Setter
+    @Getter
+    @Setter
     private Long idUsuario;
 
     @Column(name = "login_usuario")
-    @Getter @Setter
+    @Getter
+    @Setter
     private String login;
 
     @Column(name = "senha_usuario")
-    @Getter @Setter
+    @Getter
+    @Setter
     private String senha;
 
     @Transient
-    @Getter @Setter
+    @Getter
+    @Setter
     private String comfirmarsenha;
 
     @JoinColumn(name = "pessoa")
     @OneToOne
-    @Getter @Setter
+    @Getter
+    @Setter
     private Pessoa pessoa;
 
     @Column(name = "perfil")
-    @Getter @Setter
+    @Getter
+    @Setter
+    @Enumerated(EnumType.STRING)
     private PerfilUsuario perfilUsuario;
 
 

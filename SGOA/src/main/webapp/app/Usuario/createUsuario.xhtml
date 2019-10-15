@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <h:form>
+
+        <p:toolbar>
+            <f:facet name="left">
+                <p:outputLabel value="Usuario"/>
+
+                <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                    </span>
+
+                <p:commandButton value="Salvar"
+                                 icon="#{icons.salvar}"
+                                 update="mainUsuario"
+                                 actionListener="#{usuarioController.salvar()}"
+                />
+                <p:commandButton value="Voltar"
+                                 icon="#{icons.voltar}"
+                                 immediate="true"
+                                 update="mainUsuario"
+                                 actionListener="#{usuarioController.layoutList()}"/>
+
+            </f:facet>
+        </p:toolbar>
+
+        <b:panel title="Cadastro Usuario" collapsible="false">
+            <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+                <p:outputLabel for="prodTipo" value="Tipo Produto:"/>
+                <p:selectOneMenu id="prodTipo"
+                                 value="#{usuarioController.selected.perfilUsuario}"
+                                 dynamic="true">
+                    <f:selectItems value="#{usuarioController.selected.perfilUsuario.listaGenero}"
+                                   var="tip"
+                                   itemLabel="#{tip.descricao}"
+                                   itemValue="#{tip}"/>
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Usuario:" style="font-weight:bold"/>
+                <p:autoComplete value="#{usuarioController.selected.pessoa}"
+                                completeMethod="#{pessoaController.listaFiltrando}"
+                                var="obj"
+                                size="50"
+                                itemLabel="#{obj.nomePessoa}"
+                                itemValue="#{obj}"
+                                converter="#{pessoaController.converter}"
+                                dropdown="true"
+                >
+                    <p:ajax event="itemSelect"/>
+                </p:autoComplete>
+
+                <h:outputLabel value="Login:" style="font-weight:bold"/>
+                <b:inputText value="#{usuarioController.selected.login}"
+                             required="true"
+                             requiredMessage="O nome é obrigatório!"
+                             size="50"
+                             placeholder="Nome"
+                             style="text-transform: capitalize;"/>
+
+                <h:outputLabel value="Senha:" style="font-weight:bold"/>
+                <b:inputText value="#{usuarioController.selected.senha}"
+                             type="password"
+                             required="true"
+                             requiredMessage="Senha Obrigatoria"
+                             placeholder="Abreviação"/>
+
+                <h:outputLabel value="Casas Decimais:" style="font-weight:bold"/>
+                <b:inputText value="#{usuarioController.selected.comfirmarsenha}"
+                             size="2"
+                             type="password"
+                             placeholder="Comfirma Senha">
+                </b:inputText>
+                <p:separator/>
+
+            </h:panelGrid>
+
+        </b:panel>
+    </h:form>
+
+</f:view>
+</html>

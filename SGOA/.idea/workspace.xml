@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SGOA:war exploded" />
+      <artifact name="SystemServiceMaven:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8712521d-5069-4995-adb2-e272c5d556b8" name="Default Changelist" comment="MOdulo financeiro implantado e modulo compra finalizado">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Relatorios/LucroFiltrando/relatorioLucro.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/CompraController.java" afterDir="false" />
@@ -15,9 +16,22 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/VendaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemCompra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ItemVenda.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/PerfilUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/createUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/listUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/mainUsuario.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/viewUsuario.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasReceberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/ContasReceberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" afterDir="false" />
+>>>>>>> origin/usuario-Login
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/MovimentaFinanceiro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/ReceberPagar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/ReceberPagarFacade.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/VendaFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/VendaFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
@@ -44,6 +58,21 @@
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/CompraFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/CompraFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/VendaFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/VendaFacade.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/ContasReceberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ItemVenda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/ReceberPagar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Entidade/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/ReceberPagarFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/UsuarioFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/sgoa/Facade/UsuarioFacade.class" afterDir="false" />
+>>>>>>> origin/usuario-Login
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +82,20 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,6 +108,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/UsuarioFacade.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/CompraFacade.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
@@ -90,23 +134,43 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/Documentos/SGP" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/app" />
+>>>>>>> origin/usuario-Login
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+<<<<<<< HEAD
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Login" />
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando" />
+>>>>>>> origin/usuario-Login
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.com.sgoa.Facade" />
       <recent name="br.com.sgoa.Enums" />
+      <recent name="br.com.sgoa.Controller" />
+      <recent name="br.com.sgoa.Facade" />
     </key>
+<<<<<<< HEAD
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/reports" />
       <recent name="$PROJECT_DIR$/src/main/webapp/app/Relatorios/VendaFiltrando" />
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/app" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/app/Login" />
+>>>>>>> origin/usuario-Login
     </key>
   </component>
   <component name="RunDashboard">
@@ -121,11 +185,86 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="SGOA" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
+  <component name="RunManager" selected="Tomcat Server.SGOA">
+    <configuration name="SGOA (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="SGOA:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/local" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="SGOA_(1)_SystemServiceMaven_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="45223" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SystemServiceMaven:war exploded" />
+          <artifact name="SGOA:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="SGOA" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="SystemServiceMaven:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/local" />
           </settings>
@@ -195,6 +334,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.SGOA" />
+      <item itemvalue="Tomcat Server.SGOA (1)" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -211,6 +354,7 @@
       <workItem from="1570578458234" duration="1898000" />
       <workItem from="1570580589468" duration="365000" />
       <workItem from="1570582746271" duration="2381000" />
+<<<<<<< HEAD
       <workItem from="1570588145066" duration="5102000" />
       <workItem from="1570746428413" duration="174000" />
       <workItem from="1570747344802" duration="4072000" />
@@ -220,6 +364,13 @@
       <workItem from="1570759430714" duration="703000" />
       <workItem from="1570995795140" duration="197000" />
       <workItem from="1570997999054" duration="87000" />
+=======
+      <workItem from="1570588145066" duration="4381000" />
+      <workItem from="1570635797326" duration="1093000" />
+      <workItem from="1570660065249" duration="4094000" />
+      <workItem from="1570808858780" duration="2362000" />
+      <workItem from="1570832587013" duration="840000" />
+>>>>>>> origin/usuario-Login
     </task>
     <servers />
   </component>

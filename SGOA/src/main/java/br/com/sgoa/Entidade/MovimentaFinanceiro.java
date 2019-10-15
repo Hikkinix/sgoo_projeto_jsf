@@ -54,7 +54,7 @@ public class MovimentaFinanceiro implements Serializable, EntidadePai{
     @Setter
     private Usuario usuario;
 
-    @JoinColumn(name = "receberPagar", referencedColumnName = "idReceberPagar")
+    @JoinColumn(name = "idReceberPagar", referencedColumnName = "idReceberPagar")
     @ManyToOne(cascade = CascadeType.ALL)
     @Getter
     @Setter

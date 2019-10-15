@@ -25,6 +25,7 @@ public class LoginController extends AdminSession implements Serializable {
     private UsuarioFacade usuarioFacade;
     private Usuario usuario = new Usuario();
     private LogonMB facesLogin;
+    private Boolean autorizarLogin = false;
 /*
     public Boolean validaMenu(String menu){
         for (Permitir p : usuario.getPerfil().getPermitir()) { // verifica permisoes do perfil do usuario
@@ -46,12 +47,12 @@ public class LoginController extends AdminSession implements Serializable {
 
     @Override
     public boolean isLoggedIn() {
-        return usuario.getLogin() != null;
+        return autorizarLogin;
     }
     public String logar() throws IOException {
-    //    usuario = usuarioFacade.validaUsuario(usuario);
-        if(usuario.getLogin().equals("")){
-
+        usuario = usuarioFacade.validaUsuario(usuario);
+        if(usuario.getLogin().equals("NOP") || usuario != null){
+            autorizarLogin = true;
             Faces.getExternalContext().getFlash().setKeepMessages(true);
             Faces.redirect(adminConfig.getIndexPage());
             return "";

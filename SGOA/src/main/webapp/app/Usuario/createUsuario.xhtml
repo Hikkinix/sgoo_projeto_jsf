@@ -34,11 +34,11 @@
         <b:panel title="Cadastro Usuario" collapsible="false">
             <h:panelGrid id="grid" columns="1" cellpadding="5">
 
-                <p:outputLabel for="prodTipo" value="Tipo Produto:"/>
+                <p:outputLabel for="prodTipo" value="Perfil Usuario:"/>
                 <p:selectOneMenu id="prodTipo"
                                  value="#{usuarioController.selected.perfilUsuario}"
                                  dynamic="true">
-                    <f:selectItems value="#{usuarioController.selected.perfilUsuario.listaGenero()}"
+                    <f:selectItems value="#{usuarioController.selected.perfilUsuario.listaGenero}"
                                    var="tip"
                                    itemLabel="#{tip.descricao}"
                                    itemValue="#{tip}"/>
@@ -72,7 +72,7 @@
                              requiredMessage="Senha Obrigatoria"
                              placeholder="Abreviação"/>
 
-                <h:outputLabel value="Casas Decimais:" style="font-weight:bold"/>
+                <h:outputLabel value="Confirmar Senha:" style="font-weight:bold"/>
                 <b:inputText value="#{usuarioController.selected.comfirmarsenha}"
                              size="2"
                              type="password"

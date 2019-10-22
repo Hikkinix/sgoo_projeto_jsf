@@ -8,9 +8,9 @@ import java.util.List;
 
 public enum PerfilUsuario implements Serializable{
 
-    MASTER("Não Informar"),
-    ADM("Masculino"),
-    USER("Feminino");
+    MASTER("Master"),
+    ADM("Administrador"),
+    USER("Usuario");
 
     @Getter private final String descricao;
 

